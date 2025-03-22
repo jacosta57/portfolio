@@ -1,5 +1,8 @@
 const TerminalOutput = ({output}) => {
-    return( <p className="mb-3 pb-2">{output}</p> )
+    if(output == ""){
+        return;
+    }
+    return( <div className="mb-3">{output}</div> )
 }
 
 export default TerminalOutput;

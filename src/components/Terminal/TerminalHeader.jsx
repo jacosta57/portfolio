@@ -3,11 +3,11 @@ function TerminalHeader(){
 
     return(
         <>
-            <div className="d-flex align-items-center border-bottom border-secondary pb-2 mb-3">
+            <div className="d-flex align-items-center pb-2 border-bottom border-secondary mb-3">
                 <div className="bg-danger rounded-circle me-2" style={circle}></div>
                 <div className="bg-warning rounded-circle me-2" style={circle}></div>
                 <div className="bg-success rounded-circle me-2" style={circle}></div>
-                <h1 className="text-secondary ms-2 mb-0 small align-bottom">portfolio.sh</h1>
+                <h1 className="text-secondary ms-2 mb-0 small">portfolio.sh</h1>
             </div>
         </>
     )

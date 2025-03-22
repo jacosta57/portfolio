@@ -1,108 +1,111 @@
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import TerminalCommand from "./TerminalCommand";
 import TerminalHeader from "./TerminalHeader";
 import TerminalInput from "./TerminalInput";
 import TerminalOutput from "./TerminalOutput";
+import terminalFiles from "../../assets/terminalFiles.json"
 
-function Terminal(){
+const availableFiles = Object.keys(terminalFiles).sort().join('  ');
 
-    const commands = {
-        help: {
-            name: "help",
-            output: 
-                <span> &gt;Welcome to Jayson Acosta's Portfolio! Below are some commands to get you started.
-                    <br/>&gt;help     - display this help section
-                    <br/>&gt;whoami   - information about me
-                    <br/>&gt;ls       - list all files
-                    <br/>&gt;cat file - read file
-                </span>
-            
-        },
-        whoami: {
-            name: "whoami",
-            output: <span>&gt; Jayson Acosta | Computer & Software Engineer</span>
-        },
-        ls: {
-            name: "ls",
-            output: <span>&gt; projects.json |  skills.json |  welcome.txt</span>
-        },
-        cat: {
-            name: "cat",
-            output: <span>&gt;Input a file to read. List all files with ls</span>
-        },
-        findCommand : function(command){
-            switch(command){
-                case "help":
-                    return this.help;
-                case "whoami":
-                    return this.whoami;
-                case "ls":
-                    return this.ls;
-                case "cat":
-                    return this.cat;
-                default:
-                    return;
+function Terminal() {
+  const helpOutput = (
+    <pre>
+{`Welcome to Jayson Acosta's Portfolio! Below are some commands to get you started.
+help     - display this help section
+whoami   - information about me
+ls       - list all files
+cat {file} - read file
+clear    - clear the terminal`}
+    </pre>
+  );
 
-            }
+  const [history, setHistory] = useState([
+    { name: "help", output: helpOutput }
+  ]);
+  
+  const terminalEnd = useRef(null);
+
+  useEffect(() => {
+    if (terminalEnd.current) {
+      terminalEnd.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [history]);
+
+  const handleCommand = (userInput) => {
+    const [command, ...args] = userInput.split(" ");
+    const cmd = command.toLowerCase();
+    
+    let output;
+    
+    switch (cmd) {
+      case "help":
+        output = helpOutput;
+        break;
+      case "whoami":
+        output = <pre>{`Jayson Acosta | Computer & Software Engineer`}</pre>;
+        break;
+      case "clear":
+        setHistory([]);
+        return;
+      case "ls":
+        output = <pre>{`${availableFiles}`}</pre>;
+        break;
+      case "cat":
+        const filename = args[0];
+
+        if (!filename) {
+          output = <pre>{`Input a file to read. List all files with ls`}</pre>;
+          break;
         }
+        if(!terminalFiles[filename]){ 
+            output = "";
+            break;
+         }
+
+        if (filename.endsWith('.json')) {
+            output = <pre>{JSON.stringify(terminalFiles[filename], null, 2)}</pre>;
+            break;
+          } 
+
+          output = <pre>{`${terminalFiles[filename]}`}</pre>;
+          break;
+
+      case "":
+        output = "";
+        break;
+      default:
+        output = <pre>{`Command not found: ${command}. Type 'help' for available commands.`}</pre>;
     }
 
-    const [history, setHistory] = useState([ commands.help, commands.ls]);
-    const [typingIndex, setTypingIndex] = useState(null);
+    setHistory(prev => [...prev, { name: userInput, output }]);
+  };
 
-    const terminalEnd = useRef(null);
-
-    useEffect(() => {
-        if (terminalEnd.current) {
-          terminalEnd.current.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, [history]);
-
-      const handleCommand = (command) => {
-        let commandObject = commands.findCommand(command);
-
-        if (!commandObject){
-            commandObject = {
-                name: command,
-                output: `> Command not found: ${command}. Type 'help' for available commands.`
-            }
-        }
-
-        setHistory(prev => {
-            setTypingIndex(prev.length)
-            return [...prev, commandObject]
-        });
-
-        setTimeout(() => {
-            setTypingIndex(null);
-        }, 100);
-      }
-
-    return(
-        <section className="min-vh-100 d-flex align-items-center">
+  return (
+    <section className="position-relative min-vh-100 d-flex align-items-center">
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <div className="bg-black rounded p-4 shadow" style={{ maxHeight: '70vh', overflowY: 'auto' }}>
+        <div className="row align-items-center">
+          <div className="col-12 mb-4 mb-lg-0">
+            <div 
+              className="bg-black rounded p-4 shadow fs-5" 
+              style={{ height: '50vh', width: '80vh', overflowY: 'auto', fontFamily: 'monospace', scrollbarColor: '#121111 black'}}
+            >
               <TerminalHeader />
-                
-                {history.map((command, index) => {
-                    return (
-                    <div key={index}>
-                        <TerminalCommand command={command.name} isTyping={index === typingIndex} />
-                        <TerminalOutput output={command.output} />
-                    </div>
-                    );
-                })}
-
-                <TerminalInput onSubmit={handleCommand}/>
-                <div ref={terminalEnd} />
+              
+              {history.map((entry, index) => (
+                <div key={index}>
+                  <TerminalCommand command={entry.name} />
+                  <TerminalOutput output={entry.output} />
+                </div>
+              ))}
+              
+              <TerminalInput onSubmit={handleCommand} />
+              <div ref={terminalEnd} />
             </div>
           </div>
         </div>
       </div>
     </section>
-    )
+  );
 }
 
 export default Terminal;
