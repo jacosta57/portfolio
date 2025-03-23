@@ -15,8 +15,8 @@
       "github": "https://github.com/JaysonAcosta5704/konnect",
       "date": "08/2023 - 05/2024"
     },
-    "COVEY Discord Server": {
-      "name": "COVEY Discord Server",
+    "COVEY Discord Bot": {
+      "name": "COVEY Discord Bot",
       "description": "Created a Discord bot enabling users to play minigames and assisting with moderation tasks. Used multiple JavaScript APIs to enhance user experience and taught a new developer to maintain the project.",
       "tags": ["JavaScript", "Node.js", "Discord.js", "Express.js", "Event-Driven Programming"],
       "images": [],

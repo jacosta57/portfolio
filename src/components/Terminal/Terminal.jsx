@@ -3,33 +3,36 @@ import TerminalCommand from "./TerminalCommand";
 import TerminalHeader from "./TerminalHeader";
 import TerminalInput from "./TerminalInput";
 import TerminalOutput from "./TerminalOutput";
-import terminalFiles from "../../assets/terminalFiles.json"
+import terminalFiles from "../../assets/json/terminalFiles.json"
 
 const availableFiles = Object.keys(terminalFiles).sort().join('  ');
 
 function Terminal() {
   const helpOutput = (
     <pre>
-{`Welcome to Jayson Acosta's Portfolio! Below are some commands to get you started.
-help     - display this help section
-whoami   - information about me
-ls       - list all files
+{`Welcome to the portfolio terminal! Below are some commands to get you started.
+help       - display this help section
+whoami     - information about me
+ls         - list all files
 cat {file} - read file
-clear    - clear the terminal`}
+clear      - clear the terminal`}
     </pre>
   );
 
   const [history, setHistory] = useState([
     { name: "help", output: helpOutput }
   ]);
-  
-  const terminalEnd = useRef(null);
 
-  useEffect(() => {
-    if (terminalEnd.current) {
-      terminalEnd.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [history]);
+ const terminalContainerRef = useRef(null);
+ const terminalEnd = useRef(null);
+
+
+ useEffect(() => {
+  if (terminalEnd.current && terminalContainerRef.current) {
+    const container = terminalContainerRef.current;
+    container.scrollTop = container.scrollHeight;
+  }
+}, [history]);
 
   const handleCommand = (userInput) => {
     const [command, ...args] = userInput.split(" ");
@@ -81,8 +84,8 @@ clear    - clear the terminal`}
   };
 
   return (
-          <div className="col-lg-7 mb-4 mb-lg-0">
-            <div className="bg-black rounded p-4 shadow fs-5"  style={{ height: '50vh', width: '84vh', overflowY: 'auto', fontFamily: 'monospace', scrollbarColor: '#121111 black'}}>
+          <div id="Terminal" className="col-lg-7 mb-4 mb-lg-0">
+            <div ref={terminalContainerRef} className="bg-black rounded p-4 shadow fs-5"  style={{ height: '50vh', width: '84vh', overflowY: 'auto', fontFamily: 'monospace', scrollbarColor: '#121111 black'}}>
               <TerminalHeader />
               
               {history.map((entry, index) => (
@@ -91,7 +94,6 @@ clear    - clear the terminal`}
                   <TerminalOutput output={entry.output} />
                 </div>
               ))}
-              
               <TerminalInput onSubmit={handleCommand} />
               <div ref={terminalEnd} />
             </div>

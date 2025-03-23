@@ -11,7 +11,7 @@ const TerminalInput = ({ onSubmit }) => {
       input.current.focus();
     };
     
-    document.addEventListener('click', handleClick);
+    document.getElementById("Terminal").addEventListener('click', handleClick);
     
     return () => {
       document.removeEventListener('click', handleClick);
