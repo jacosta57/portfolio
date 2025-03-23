@@ -4,7 +4,6 @@ function Contact(){
 
     return (
         <>
-          <Navbar />
         </>  
       );
 }

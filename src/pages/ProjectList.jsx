@@ -5,7 +5,6 @@ import ProjectCard from '../components/Projects/ProjectCard';
 function Projects() {
   return (
     <>
-      <Navbar />
       <div className='container mt-5'>
       <h2 className="mb-5 border-bottom border-primary pb-2 d-inline-block">All Projects</h2>
         <div className='row'>

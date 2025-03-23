@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 function App() {
   return (
     <>
-    <Navbar />
       <section className="position-relative min-vh-100 d-flex align-items-center">
         <div className="container">
           <div className="row align-items-center">

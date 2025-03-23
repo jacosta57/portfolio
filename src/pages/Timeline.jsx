@@ -4,7 +4,6 @@ function Timeline(){
 
     return (
         <>
-          <Navbar />
         </>  
       );
 }

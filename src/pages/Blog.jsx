@@ -4,7 +4,6 @@ function Blog(){
 
     return (
       <>
-        <Navbar />
       </>  
     );
 }
