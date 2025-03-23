@@ -1,0 +1,90 @@
+{
+    "FinAntes": {
+      "name": "FinAntes",
+      "description": "A comprehensive financial management web application that centralizes budget tracking, spending analysis, and investment monitoring. Features interactive dashboard widgets, customizable budget categories, and data import/export capabilities with three service tiers for different user needs.",
+      "tags": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Chart.js", "Local Storage API", "Alpha Vantage API", "Coin Gecko API"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/FinAntes",
+      "date": "02/2025 - 05/2025"
+    },
+    "Konnect": {
+      "name": "Konnect",
+      "description": "Android application developed in Java and XML with a group. Led frontend development, assisted with backend development and debugging, resolved over 80% of the team's bugs and reduced API response time by 50%.",
+      "tags": ["Java", "XML", "Android SDK", "RESTful APIs", "UI/UX Design"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/konnect",
+      "date": "08/2023 - 05/2024"
+    },
+    "COVEY Discord Server": {
+      "name": "COVEY Discord Server",
+      "description": "Created a Discord bot enabling users to play minigames and assisting with moderation tasks. Used multiple JavaScript APIs to enhance user experience and taught a new developer to maintain the project.",
+      "tags": ["JavaScript", "Node.js", "Discord.js", "Express.js", "Event-Driven Programming"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/Discord-Bot",
+      "date": "09/2016 - 05/2022"
+    },
+    "TimePlanX Calendar Application": {
+      "name": "TimePlanX Calendar Application",
+      "description": "Designed a comprehensive calendar application in Java and XML, integrating features such as events, notes, and time blocks for streamlined user experience. Leveraged AI for method creation and design features.",
+      "tags": ["Java", "XML", "Android SDK", "Calendar API", "Data Persistence"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/TimeplanX",
+      "date": ""
+    },
+    "AI Browser Web Extension": {
+      "name": "AI Browser Web Extension",
+      "description": "Developed a Chrome Web Extension for streamlined access to online AI platforms. Designed an intuitive user interface with one-click access to various AI tools across the web.",
+      "tags": ["JavaScript", "HTML5", "CSS3", "Chrome Extension API", "Web Development"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/AI-Browser",
+      "date": ""
+    },
+    "Portfolio": {
+      "name": "Portfolio",
+      "description": "Personal portfolio website showcasing projects and skills. Built with React and modern web technologies to create a responsive and interactive user experience.",
+      "tags": ["JavaScript", "React", "CSS3", "Responsive Design", "Frontend Development"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/portfolio",
+      "date": ""
+    },
+    "React App": {
+      "name": "React App",
+      "description": "A React application project demonstrating proficiency in modern frontend development techniques, component architecture, and state management.",
+      "tags": ["JavaScript", "React", "CSS3", "State Management", "Component Design"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/react-app",
+      "date": ""
+    },
+    "CodeAcademy": {
+      "name": "CodeAcademy",
+      "description": "Repository of projects and exercises completed during CodeAcademy courses, demonstrating mastery of various programming concepts and languages.",
+      "tags": ["JavaScript", "HTML5", "CSS3", "Python", "Web Development"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/codeacademy",
+      "date": ""
+    },
+    "Interactive AI Storyteller": {
+      "name": "Interactive AI Storyteller",
+      "description": "An interactive storytelling application powered by AI technology that creates dynamic and engaging narrative experiences based on user input.",
+      "tags": ["JavaScript", "HTML5", "CSS3", "AI Integration", "Frontend Development"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/Interactive-AI-Storyteller",
+      "date": ""
+    },
+    "GPT App": {
+      "name": "GPT App",
+      "description": "Application utilizing GPT models for various functionalities such as text generation, summarization, and conversation. Built with a focus on user experience and practical AI applications.",
+      "tags": ["JavaScript", "React", "CSS3", "OpenAI API", "AI Implementation"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/GPT-APP",
+      "date": ""
+    },
+    "Leetcode": {
+      "name": "Leetcode",
+      "description": "Collection of LeetCode problem solutions and practice, demonstrating algorithmic thinking, data structure knowledge, and problem-solving skills in various programming languages.",
+      "tags": ["Java", "JavaScript", "Python", "Algorithms", "Data Structures"],
+      "images": [],
+      "github": "https://github.com/JaysonAcosta5704/leetcode",
+      "date": ""
+    }
+  }
