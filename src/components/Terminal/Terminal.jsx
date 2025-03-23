@@ -87,7 +87,7 @@ clear    - clear the terminal`}
           <div className="col-12 mb-4 mb-lg-0">
             <div 
               className="bg-black rounded p-4 shadow fs-5" 
-              style={{ height: '50vh', width: '80vh', overflowY: 'auto', fontFamily: 'monospace', scrollbarColor: '#121111 black'}}
+              style={{ height: '50vh', width: '84vh', overflowY: 'auto', fontFamily: 'monospace', scrollbarColor: '#121111 black'}}
             >
               <TerminalHeader />
               
