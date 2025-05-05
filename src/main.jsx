@@ -1,14 +1,17 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
+import 'styles.css'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './pages/App.jsx'
-import Blog from './pages/Blog.jsx'
-import Contact from './pages/Contact.jsx'
-import ProjectList from './pages/ProjectList.jsx'
-import Resume from './pages/Resume.jsx'
-import Timeline from './pages/Timeline.jsx'
+import App from 'pages/App.jsx'
+import Blog from 'pages/Blog.jsx'
+import Contact from 'pages/Contact.jsx'
+import ProjectList from 'pages/ProjectList.jsx'
+import Resume from 'pages/Resume.jsx'
+import Timeline from 'pages/Timeline.jsx'
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route} from 'react-router-dom';
-import Project from './pages/Project.jsx'
-import RootLayout from './pages/RootLayout.jsx'
+import Project from 'pages/Project.jsx'
+import RootLayout from 'pages/RootLayout.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements((

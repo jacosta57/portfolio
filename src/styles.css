@@ -25,3 +25,20 @@
     40% { transform: translateY(-30px); }
     60% { transform: translateY(-15px); }
   }
+
+  .t-bar {
+    width: 25% !important;
+  }
+
+  @media (min-width: 576px){
+    .t-bar {
+      width: 17% !important;
+    }
+  }
+
+  @media (min-width: 768px){
+    .t-bar {
+      width: 25% !important;
+    }
+  }
+  
