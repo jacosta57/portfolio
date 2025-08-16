@@ -8,9 +8,9 @@
     "solution": "FinAntes was designed to bridge the gap between overly simplified and overly complex financial tools. It provides a customizable experience that grows with the user's needs through three service tiers.",
     "tags": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Chart.js", "APIs"],
     "images": [
-      "/images/projects/FinAntes/Dashboard.png",
-      "/images/projects/FinAntes/Editor.png",
-      "/images/projects/FinAntes/Settings.png"
+      "/images/projects/finantes/dashboard.png",
+      "/images/projects/finantes/editor.png",
+      "/images/projects/finantes/settings.png"
     ],
     "github": "https://git.las.iastate.edu/se-coms-3190/Final-Project/IP_4",
     "liveDemo": null,
@@ -102,9 +102,9 @@
     "solution": "COVEY Discord Bot provides both entertainment through minigames and automated moderation tools to improve server engagement and reduce administrative burden.",
     "tags": ["JavaScript", "Node.js", "Discord.js", "APIs"],
     "images": [
-      "/images/projects/CoveyBot/about.png",
-      "/images/projects/CoveyBot/voting.png",
-      "/images/projects/CoveyBot/video.png"
+      "/images/projects/coveybot/about.png",
+      "/images/projects/coveybot/voting.png",
+      "/images/projects/coveybot/video.png"
     ],
     "github": "https://github.com/JaysonAcosta5704/Discord-Bot",
     "liveDemo": null,

@@ -13,13 +13,12 @@ import { usePathname } from "next/navigation";
 type Contribution = { name: string; percentage: number };
 
 export default function Project() {
-  const projectName = usePathname().replace("/projects/", "");
-
-  console.log(projectName);
-
+  const projectName = decodeURIComponent(
+    usePathname().replace("/projects/", ""),
+  );
   const project = projects[projectName as keyof typeof projects];
 
-  if (!projectName) {
+  if (!project) {
     return (
       <div className="container py-5 text-center">
         <h2>Project not found</h2>
@@ -77,16 +76,6 @@ export default function Project() {
                 <FaCalendarAlt className="me-1" /> {project.date || "Ongoing"}
               </span>
             </div>
-            <div className="d-flex flex-wrap mb-4">
-              {project.tags.map((tag: string, index: number) => (
-                <span
-                  key={index}
-                  className="badge bg-primary bg-opacity-25 text-primary border border-primary me-2 mb-2"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
           </div>
 
           {/* Project Gallery */}
@@ -128,10 +117,10 @@ export default function Project() {
               project.problem &&
               project.solution && (
                 <div className="problem-solution mt-4">
-                  <h3>Problem</h3>
+                  <h3 className="mt-4">Problem</h3>
                   <div>{project.problem}</div>
 
-                  <h3>Solution</h3>
+                  <h3 className="mt-4">Solution</h3>
                   <div>{project.solution}</div>
                 </div>
               )}
