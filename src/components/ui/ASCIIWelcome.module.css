@@ -1,0 +1,35 @@
+.ASCIIWelcome {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.ASCIIFull {
+  font-family: "Courier New", monospace;
+  line-height: 1;
+  border-radius: 5px;
+  transform-origin: center;
+}
+
+@media (max-width: 768px) {
+  .ASCIIFull {
+    font-size: 0.2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .ASCIIFull {
+    font-size: 0.4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ASCIIFull {
+    font-size: 0.5rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .ASCIIFull {
+    font-size: 0.8rem;
+  }
+}

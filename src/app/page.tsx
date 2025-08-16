@@ -1,0 +1,61 @@
+"use client";
+import ProjectCard from "@/components/ui/ProjectCard";
+import Terminal from "@/components/ui/Terminal";
+import Link from "next/link";
+import projects from "@/data/projects.json";
+import { FaChevronDown } from "react-icons/fa";
+import CredlyBadge from "@/components/ui/CredlyBadge";
+
+export default function HomePage() {
+  return (
+    <>
+      <section className="position-relative min-vh-100 d-flex align-items-center">
+        <div className="container">
+          <Terminal />
+        </div>
+      </section>
+      <div className="position-absolute bottom-0 start-50 translate-middle-x mb-4 text-center">
+        <p className="mb-1">Scroll Down</p>
+        <FaChevronDown
+          style={{ animation: "bounce 2s infinite" }}
+          className="mt-4"
+        />
+      </div>
+      <section id="certificates" className="py-5">
+        <div className="container">
+          <h2 className="mb-5 border-bottom border-primary pb-2 d-inline-block">
+            Featured Certificates
+          </h2>
+          <div className="row g-4">
+            <div className="col-md-4 mb-4">
+              <CredlyBadge badgeId="11cdeecb-77b1-4030-bb48-ab7cf872bf41" />
+            </div>
+          </div>
+          <div className="text-center mt-4">
+            <Link href="/certificates" className="btn btn-outline-light">
+              See All Certificates
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="py-5">
+        <div className="container">
+          <h2 className="mb-5 border-bottom border-primary pb-2 d-inline-block">
+            Featured Projects
+          </h2>
+          <div className="row g-4">
+            <ProjectCard project={projects["COVEY Discord Bot"]} />
+            <ProjectCard project={projects["Konnect"]} />
+            <ProjectCard project={projects["FinAntes"]} />
+          </div>
+          <div className="text-center mt-4">
+            <Link href="/projects" className="btn btn-outline-light">
+              See All Projects
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
