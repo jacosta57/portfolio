@@ -1,4 +1,4 @@
-import React, { JSX, useState } from "react";
+import React, { JSX, useState, useRef, useEffect } from "react";
 import styles from "./CredlyBadge.module.css";
 import Link from "next/link";
 
@@ -10,11 +10,15 @@ export default function CredlyBadge({
   badgeId,
 }: CredlyBadgeProps): JSX.Element {
   const [isLoading, setIsLoading] = useState(true);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  const handleLoad = () => {
-    console.log("Loading Finished");
-    setIsLoading(false);
-  };
+  useEffect(() => {
+    // Just check once after mount if content is already there
+    const iframe = iframeRef.current;
+    if (iframe && iframe.offsetHeight > 100) {
+      setIsLoading(false);
+    }
+  }, []);
 
   return (
     <Link href={`https://www.credly.com/embedded_badge/${badgeId}`}>
@@ -23,12 +27,12 @@ export default function CredlyBadge({
           <div className="spinner-border text-primary" role="status" />
         )}
         <iframe
+          ref={iframeRef}
           name="acclaim-badge"
           id={`embedded-badge-${badgeId}`}
           src={`https://www.credly.com/embedded_badge/${badgeId}`}
           className={styles.credlyIframe}
-          style={{ display: isLoading ? "none" : "block" }}
-          onLoad={handleLoad}
+          style={isLoading ? { visibility: "hidden" } : {}}
         />
       </div>
     </Link>
