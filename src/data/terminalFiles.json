@@ -1,0 +1,55 @@
+{
+  "projects.json": {
+    "projects": [
+      {
+        "name": "FinAntes",
+        "tech": "HTML, CSS, JavaScript, Bootstrap, JSON",
+        "desc": "Budget and Investment tracker for everything you need"
+      },
+      {
+        "name": "Konnect",
+        "tech": "Android Studio, Java, XML, Volley, SpringBoot",
+        "desc": "Full-stack task management application"
+      },
+      {
+        "name": "Covey Discord Bot",
+        "tech": "JavaScript, DiscordJS, APIs",
+        "desc": "Discord bot for entertainment and moderation"
+      }
+    ]
+  },
+  "skills.json": {
+    "Languages": ["English", "Spanish"],
+    "Programming Languages": [
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "HTML/CSS",
+      "C",
+      "VHDL"
+    ],
+    "Frameworks": ["Node.js", "Express", "React", "Bootstrap"],
+    "tools": ["Git", "Postman"]
+  },
+  "education.json": {
+    "degrees": [
+      {
+        "institution": "Iowa State University of Technology and Sciences",
+        "year": "2022-2026",
+        "major": "Computer Engineering",
+        "minor": "Spanish"
+      }
+    ]
+  },
+  "experience.json": {
+    "work": [
+      {
+        "title": "Software Engineering Intern",
+        "company": "Source Allies",
+        "period": "May 2025 - August 20205",
+        "responsibilities": ["To Be Determined!"]
+      }
+    ]
+  },
+  "aboutme.txt": "I'm Jayson Acosta, a Computer Engineering student graduating in May 2026.\nI'm passionate about creating solutions to everyday problems and exploring\nemerging technologies.\n\nMy journey in tech began with curiosity about video game mechanics, which\nevolved into fascination with consumer electronics.\nAfter getting my first laptop, I taught myself programming and have been\nbuilding my skills ever since.\n\nTechnical interests: Web Development, Embedded Systens, Android Development\n\nWhen I'm not coding or building circuits, you can find me researching new\ntechnologies, exploring the outdoors, or gaming.\n\nI'm constantly learning and would love to connect with others who share similar\ninterests!\n\n"
+}

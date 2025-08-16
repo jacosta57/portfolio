@@ -1,0 +1,18 @@
+.terminalOutput {
+  line-height: 0.5;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+}
+
+.terminal {
+  margin: 0 4vh;
+  height: 60vh;
+  overflow-y: auto;
+  scrollbar-color: #121111 black;
+  scroll-behavior: smooth;
+  background-color: black;
+  font-family: monospace;
+}
