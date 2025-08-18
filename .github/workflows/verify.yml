@@ -1,6 +1,5 @@
 name: Verify
 on:
-  pull_request: {}
   workflow_call: {}
 
 jobs:
