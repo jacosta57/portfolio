@@ -31,11 +31,12 @@ jobs:
           role-session-name: "GithubActions-Deployment=Portfolio"
 
       - name: Deploy Cloudformation
-        run: aws cloudformation deploy \
-          --template-file cloudformation.template.yml \
-          --stack-name portfolio-${{inputs.Environment}} \
-          --parameter-overrides BucketName=${{ inputs.BucketName }} \
-          --capabilities CAPABILITY_IAM \
+        run: |
+          aws cloudformation deploy \
+           --template-file cloudformation.template.yml \
+           --stack-name portfolio-${{inputs.Environment}} \
+           --parameter-overrides BucketName=${{ inputs.BucketName }} \
+           --capabilities CAPABILITY_IAM \
 
       - name: Get Website Artifact
         uses: actions/download-artifact@v4
@@ -54,4 +55,4 @@ jobs:
           message: |
             🚀 **Development Deployment Ready!**
 
-            [View this PR deployed](https://${{inputs.BucketName}}.com)
+            [View this PR deployed](https://${{inputs.BucketName}})
