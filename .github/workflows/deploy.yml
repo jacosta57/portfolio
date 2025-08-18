@@ -19,6 +19,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -49,9 +50,9 @@ jobs:
 
       - name: Comment PR with Deployment URL
         if: ${{ inputs.Environment == 'dev' && github.event_name == 'pull_request' }}
-        uses: thollander/actions-comment-pull-request@v2
+        uses: thollander/actions-comment-pull-request@v3
         with:
-          comment_tag: deployment-url
+          comment-tag: deployment-url
           message: |
             🚀 **Development Deployment Ready!**
 
