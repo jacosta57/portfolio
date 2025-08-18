@@ -28,7 +28,10 @@ jobs:
         run: npm run lint
 
       - name: Validate CloudFormation Template
-        run: aws cloudformation validate-template --template-body file://./cloudformation.template.yml
+        run: |
+          aws cloudformation validate-template \
+            --template-body file://./cloudformation.template.yml \
+            --region us-east-1
 
       - name: Build Website
         run: npm run build
