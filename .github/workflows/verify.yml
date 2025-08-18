@@ -3,6 +3,21 @@ on:
   workflow_call: {}
 
 jobs:
+  cloudformation-lint:
+    name: Cloudformation Lint
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup CFN lint
+        uses: scottbrenner/cfn-lint-action@v2
+
+      - name: cfn-lint
+        run: cfn-lint cloudformation.template.yml
+
   verify:
     name: Verify
     runs-on: ubuntu-latest
@@ -26,12 +41,6 @@ jobs:
 
       - name: Validate code
         run: npm run lint
-
-      - name: Validate CloudFormation Template
-        run: |
-          aws cloudformation validate-template \
-            --template-body file://./cloudformation.template.yml \
-            --region us-east-1
 
       - name: Build Website
         run: npm run build
