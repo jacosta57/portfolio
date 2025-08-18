@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 
 // TypeScript interfaces
 interface Project {
@@ -26,7 +26,7 @@ function ProjectCard({ project, onTagClick }: ProjectCardProps) {
       <Link href={`/projects/${project.name}`} className="text-decoration-none">
         <div className="card h-100 shadow-sm border-0">
           <div className="position-relative">
-            <Image
+            <ExportedImage
               src={project.images?.[0] || "https://picsum.photos/400/200"}
               className="card-img-top"
               alt={project.name}

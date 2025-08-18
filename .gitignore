@@ -17,6 +17,17 @@
 /.next/
 /out/
 
+# next-image-export-optimizer generated files
+/public/images/next-image-export-optimizer-hashes.json
+/public/images/**/*-opt-*.WEBP
+/public/images/**/*-opt-*.webp
+/public/images/**/*-opt-*.jpg
+/public/images/**/*-opt-*.jpeg
+/public/images/**/*-opt-*.png
+/nextImageExportOptimizer/
+nextImageExportOptimizerHashes.json
+nextImageExportOptimizerCache.json
+
 # production
 /build
 

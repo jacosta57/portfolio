@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint && tsc",
+    "dev": "next dev",
+    "dev:turbopack": "next dev --turbopack",
+    "build": "next build && next-image-export-optimizer",
+    "start": "serve out -p 3001",
+    "lint": "next lint && tsc --noEmit",
     "format": "prettier --write .",
     "check-format": "prettier --check ."
   },
@@ -14,11 +15,13 @@
     "bootstrap": "^5.3.7",
     "jest": "^30.0.5",
     "next": "15.4.6",
+    "next-image-export-optimizer": "^1.19.0",
     "playwright": "^1.54.2",
     "prettier": "^3.6.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "serve": "^14.2.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
