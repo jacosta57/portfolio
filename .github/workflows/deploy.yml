@@ -5,18 +5,12 @@ on:
       AWSAccountId:
         required: true
         type: string
+      BucketName:
+        required: true
+        type: string
       Environment:
         required: true
         type: string
-      SiteBaseUrl:
-        required: false
-        type: string
-        description: "Base URL for the deployed site (for PR comments)"
-      CommentOnPR:
-        required: false
-        type: boolean
-        default: false
-        description: "Whether to comment on PR with deployment URL"
 
 jobs:
   deploy:
@@ -40,8 +34,8 @@ jobs:
         run: aws cloudformation deploy \
           --template-file cloudformation.template.yml \
           --stack-name portfolio-${{inputs.Environment}} \
-          --parameter-overrides SiteBaseUrl=${{ inputs.SiteBaseUrl }} \
-          --capabilities CAPABILITY_IAM
+          --parameter-overrides BucketName=${{ inputs.BucketName }} \
+          --capabilities CAPABILITY_IAM \
 
       - name: Get Website Artifact
         uses: actions/download-artifact@v4
@@ -50,14 +44,14 @@ jobs:
           path: out
 
       - name: Upload to S3
-        run: aws s3 sync out s3://${{ inputs.SiteBaseUrl }} --delete
+        run: aws s3 sync out s3://${{ inputs.BucketName }} --delete
 
       - name: Comment PR with Deployment URL
-        if: ${{ inputs.CommentOnPR && github.event_name == 'pull_request' }}
+        if: ${{ inputs.Environment == 'dev' && github.event_name == 'pull_request' }}
         uses: thollander/actions-comment-pull-request@v2
         with:
           comment_tag: deployment-url
           message: |
             🚀 **Development Deployment Ready!**
 
-            [View this PR deployed](dev.${{ inputs.SiteBaseUrl }}/pull-request/${{ github.event.pull_request.number }})
+            [View this PR deployed](https://${{inputs.BucketName}}.com)

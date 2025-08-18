@@ -34,7 +34,7 @@ Resources:
           - Sid: DeploymentAccess
             Effect: Allow
             Principal:
-              AWS: !Sub "arn:aws:iam::${AWS::AccountId}:role/GitHubActionsRole"
+              AWS: !Sub "arn:aws:iam::${AWS::AccountId}:role/GithubS3FullAccess"
             Action:
               - s3:ListBucket
               - s3:GetBucketLocation

@@ -22,9 +22,8 @@ jobs:
     uses: ./.github/workflows/deploy.yml
     with:
       AWSAccountId: "${{ vars.AWS_ACCOUNT_ID }}"
+      BucketName: "dev.${{ vars.BASE_URL }}"
       Environment: "dev"
-      SiteBaseUrl: "https://dev.${{ vars.BASE_URL }}"
-      CommentOnPR: true
     secrets: inherit
 
   deploy-prod:
@@ -35,6 +34,5 @@ jobs:
     with:
       AWSAccountId: "${{ vars.AWS_ACCOUNT_ID }}"
       Environment: "prod"
-      SiteBaseUrl: "https://${{ vars.BASE_URL }}"
-      CommentOnPR: false
+      BucketName: "${{ vars.BASE_URL }}"
     secrets: inherit
