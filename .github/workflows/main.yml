@@ -1,0 +1,36 @@
+name: Portfolio CI/CD
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+  workflow_dispatch: {}
+
+jobs:
+  verify:
+    name: Verify Code
+    uses: ./.github/workflows/verify.yml
+
+  deploy-dev:
+    name: Deploy to Development
+    if: github.event_name == 'pull_request'
+    needs: verify
+    uses: ./.github/workflows/deploy.yml
+    with:
+      AWSAccountId: '${{ vars.AWS_ACCOUNT_ID }}'
+      Environment: 'dev'
+      SiteBaseUrl: 'https://dev.${{ vars.BASE_URL }}'
+      CommentOnPR: true
+    secrets: inherit
+
+  deploy-prod:
+    name: Deploy to Production
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: verify
+    uses: ./.github/workflows/deploy.yml
+    with:
+      AWSAccountId: '${{ vars.AWS_ACCOUNT_ID }}'
+      Environment: 'prod'
+      SiteBaseUrl: 'https://${{ vars.BASE_URL }}'
+      CommentOnPR: false
+    secrets: inherit

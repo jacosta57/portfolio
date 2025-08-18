@@ -1,0 +1,63 @@
+name: Deploy
+on:
+  workflow_call:
+    inputs:
+      AWSAccountId:
+        required: true
+        type: string
+      Environment:
+        required: true
+        type: string
+      SiteBaseUrl:
+        required: false
+        type: string
+        description: 'Base URL for the deployed site (for PR comments)'
+      CommentOnPR:
+        required: false
+        type: boolean
+        default: false
+        description: 'Whether to comment on PR with deployment URL'
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: 'arn:aws:iam::${{ inputs.AWSAccountId }}:role/GithubS3FullAccess'
+          role-session-name: 'GithubActions-Deployment=Portfolio'
+
+      - name: Deploy Cloudformation
+        run: aws cloudformation deploy \
+          --template-file cloudformation.template.yml \
+          --stack-name portfolio-${{inputs.Environment}} \
+          --parameter-overrides SiteBaseUrl=${{ inputs.SiteBaseUrl }} \
+          --capabilities CAPABILITY_IAM
+
+      - name: Get Website Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ github.run_id }}
+          path: out
+
+      - name: Upload to S3
+        run: aws s3 sync out s3://${{ inputs.SiteBaseUrl }} --delete
+
+      - name: Comment PR with Deployment URL
+        if: ${{ inputs.CommentOnPR && github.event_name == 'pull_request' }}
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          comment_tag: deployment-url
+          message: |
+            🚀 **Development Deployment Ready!**
+            
+            [View this PR deployed](dev.${{ inputs.SiteBaseUrl }}/pull-request/${{ github.event.pull_request.number }})
