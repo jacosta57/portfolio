@@ -27,7 +27,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: us-east-1
-          role-to-assume: "arn:aws:iam::${{ inputs.AWSAccountId }}:role/GithubS3FullAccess"
+          role-to-assume: "arn:aws:iam::${{ inputs.AWSAccountId }}:role/GithubActionsRole"
           role-session-name: "GithubActions-Deployment=Portfolio"
 
       - name: Deploy Cloudformation

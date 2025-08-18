@@ -27,6 +27,9 @@ jobs:
       - name: Validate code
         run: npm run lint
 
+      - name: Validate CloudFormation Template
+        run: aws cloudformation validate-template --template-body file://./cloudformation.template.yml
+
       - name: Build Website
         run: npm run build
 
