@@ -1,6 +1,7 @@
 {
   "FinAntes": {
     "name": "FinAntes",
+    "slug": "FinAntes",
     "description": "A comprehensive financial management web application that centralizes budget tracking, spending analysis, and investment monitoring. Features interactive dashboard widgets, customizable budget categories, and data import/export capabilities with three service tiers for different user needs.",
     "shortDescription": "Financial management web app with interactive dashboards",
     "fullDescription": "FinAntes is a comprehensive financial management web application designed to give users complete control over their financial life in one centralized platform. The application features an interactive dashboard with customizable widgets that provide visual representations of budget status, spending patterns, and investment performance. Users can create personalized budget categories, set spending limits with automated alerts, and seamlessly import/export financial data from various sources. The application offers three distinct service tiers to accommodate users with different needs, from basic budget tracking to advanced investment portfolio analysis.",
@@ -50,6 +51,7 @@
   },
   "Konnect": {
     "name": "Konnect",
+    "slug": "Konnect",
     "description": "Android application developed in Java and XML with a group. Led frontend development, assisted with backend development and debugging, resolved over 80% of the team's bugs and reduced API response time by 50%.",
     "shortDescription": "Android app with optimized frontend and backend",
     "fullDescription": "Konnect is a collaborative Android application developed with a team of four developers using Java and XML. As the frontend lead, I was responsible for designing and implementing the user interface, ensuring a seamless user experience, and coordinating with the backend team for API integration. I also played a significant role in debugging and performance optimization, successfully resolving over 80% of the team's reported bugs and implementing optimizations that reduced API response time by 50%, significantly improving the overall app performance and user experience.",
@@ -93,8 +95,9 @@
     ],
     "metrics": ["80% bug resolution", "50% API response time reduction"]
   },
-  "COVEY Discord Bot": {
+  "CoveyBot": {
     "name": "COVEY Discord Bot",
+    "slug": "CoveyBot",
     "description": "Created a Discord bot enabling users to play minigames and assisting with moderation tasks. Used multiple JavaScript APIs to enhance user experience and taught a new developer to maintain the project.",
     "shortDescription": "Interactive Discord bot for games and moderation",
     "fullDescription": "COVEY is a feature-rich Discord bot developed using JavaScript, Node.js, and the Discord.js API. The bot provides entertainment through various minigames while also offering powerful moderation tools to help server administrators maintain their communities. The project involved integrating multiple JavaScript APIs to enhance functionality and user experience. As part of the development process, I also mentored a junior developer, teaching them how to maintain and extend the bot's capabilities.",
@@ -144,8 +147,9 @@
       "Knowledge transfer to new developer"
     ]
   },
-  "TimePlanX Calendar Application": {
+  "TimePlanX": {
     "name": "TimePlanX Calendar Application",
+    "slug": "TimePlanX",
     "description": "Designed a comprehensive calendar application in Java and XML, integrating features such as events, notes, and time blocks for streamlined user experience. Leveraged AI for method creation and design features.",
     "shortDescription": "Comprehensive calendar app with AI-enhanced features",
     "fullDescription": "TimePlanX is a sophisticated calendar application built with Java and XML for Android devices. The app goes beyond basic calendar functionality by integrating comprehensive event management, note-taking capabilities, and innovative time-blocking features for effective time management. A unique aspect of this project was the integration of AI technologies to assist with method creation and design optimization, resulting in cleaner code and more intuitive user interfaces.",
@@ -181,8 +185,9 @@
       "Streamlined time management"
     ]
   },
-  "AI Browser Web Extension": {
+  "AIBrowser": {
     "name": "AI Browser Web Extension",
+    "slug": "AIBrowser",
     "description": "Developed a Chrome Web Extension for streamlined access to online AI platforms. Designed an intuitive user interface with one-click access to various AI tools across the web.",
     "shortDescription": "Chrome extension for quick access to AI tools",
     "fullDescription": "The AI Browser Web Extension is a Chrome browser extension designed to provide users with quick and convenient access to a variety of AI tools and platforms. The extension features a clean, intuitive interface that allows users to launch their favorite AI tools with a single click, saving time and improving workflow efficiency. The project required a deep understanding of Chrome's Extension API and careful consideration of user experience design principles.",
@@ -217,6 +222,7 @@
   },
   "Portfolio": {
     "name": "Portfolio",
+    "slug": "Portfolio",
     "description": "Personal portfolio website showcasing projects and skills. Built with React and modern web technologies to create a responsive and interactive user experience.",
     "shortDescription": "Personal showcase website built with React",
     "fullDescription": "This portfolio website serves as a professional showcase of my skills, projects, and experience. Built using React, the site features responsive design principles that ensure optimal viewing across various devices and screen sizes. The project demonstrates proficiency in modern frontend development techniques, including component-based architecture, state management, and CSS styling with Bootstrap. The portfolio includes interactive elements to engage visitors and present information in a clear, visually appealing manner.",

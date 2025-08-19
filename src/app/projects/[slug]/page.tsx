@@ -11,9 +11,7 @@ import ExportedImage from "next-image-export-optimizer";
 type Contribution = { name: string; percentage: number };
 
 export async function generateStaticParams() {
-  return Object.keys(projects).map((slug) => ({
-    slug: encodeURIComponent(slug),
-  }));
+  return Object.keys(projects).map((slug) => ({ slug }));
 }
 
 type Params = {
@@ -24,7 +22,7 @@ type Params = {
 
 export default async function ProjectsPage({ params }: Params) {
   const { slug } = await params;
-  const projectName = decodeURIComponent(slug);
+  const projectName = slug;
   const project = projects[projectName as keyof typeof projects];
 
   if (!project) {
@@ -322,7 +320,7 @@ export default async function ProjectsPage({ params }: Params) {
             {relatedProjects.map((relatedProject, index) => (
               <div className="col-md-4 mb-4" key={index}>
                 <Link
-                  href={`/projects/${relatedProject.name}`}
+                  href={`/projects/${relatedProject.slug}`}
                   className="text-decoration-none"
                 >
                   <div className="card h-100 bg-dark text-white project-card">

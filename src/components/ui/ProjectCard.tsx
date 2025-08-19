@@ -4,6 +4,7 @@ import ExportedImage from "next-image-export-optimizer";
 // TypeScript interfaces
 interface Project {
   name: string;
+  slug: string;
   status?: string;
   images?: string[];
   shortDescription?: string;
@@ -23,7 +24,7 @@ function ProjectCard({ project, onTagClick }: ProjectCardProps) {
 
   return (
     <div className="col-md-4 mb-4">
-      <Link href={`/projects/${project.name}`} className="text-decoration-none">
+      <Link href={`/projects/${project.slug}`} className="text-decoration-none">
         <div className="card h-100 shadow-sm border-0">
           <div className="position-relative">
             <ExportedImage
