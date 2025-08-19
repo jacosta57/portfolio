@@ -1,0 +1,166 @@
+{
+  "aws-certified-developer-associate": {
+    "title": "AWS Certified Developer – Associate",
+    "provider": "Credly",
+    "issuer": "Amazon Web Services Training and Certification",
+    "badgeImage": "/images/certificates/AWS/aws_certified_developer_associate.png",
+    "verificationUrl": "https://www.credly.com/badges/11cdeecb-77b1-4030-bb48-ab7cf872bf41/embedded",
+    "date": "2025",
+    "featured": "true"
+  },
+  "build-basic-android-apps-java": {
+    "title": "Build Basic Android Apps with Java",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Build_Basic_Android_Apps_with_Java.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/5e46f39b68800d0011f5b923",
+    "date": "2025"
+  },
+  "intro-to-java": {
+    "title": "Intro to Java",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Intro_to_Java.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/8149b07e106bb4b49aad31a6432bf648",
+    "date": "2025"
+  },
+  "learn-java": {
+    "title": "Learn Java",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_Java.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/d3f89367b558583e361640f778191345",
+    "date": "2025",
+    "featured": "true"
+  },
+  "learn-css": {
+    "title": "Learn CSS",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_CSS.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/9a5bb1fc45b4281af1fffec93b0aaf05",
+    "date": "2025",
+    "featured": "true"
+  },
+  "learn-javascript": {
+    "title": "Learn JavaScript",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_JavaScript.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/705dcb15de0da4dd9d9fc4f3274b430e",
+    "date": "2024"
+  },
+  "learn-javascript-fundamentals": {
+    "title": "Learn JavaScript: Fundamentals",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_JavaScript_Fundamentals.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/705dcb15de0da4dd9d9fc4f3274b430e",
+    "date": "2024"
+  },
+  "intro-to-generative-ai": {
+    "title": "Intro to Generative AI",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Intro_to_Generative_AI.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/28ccb695c353465a8785a036ad32d3b9",
+    "date": "2024"
+  },
+  "learn-basics-of-android": {
+    "title": "Learn the Basics of Android",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_the_Basics_of_Android.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/9081f9bf9cbfb10d63d199c30bf0c739",
+    "date": "2023"
+  },
+  "ap-computer-science-a-exam-java": {
+    "title": "Study for the AP Computer Science A Exam (Java)",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Study_for_the_AP_Computer_Science_A_Exam_Java.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/5fc508b822eca90012fb25eb",
+    "date": "2023"
+  },
+  "learn-java-debugging": {
+    "title": "Learn Java: Debugging",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_Java_Debugging.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/b7485f29177f45c0866bc2c66c38b3a0",
+    "date": "2023"
+  },
+  "java-algorithms": {
+    "title": "Java: Algorithms",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Java_Algorithms.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/ab8dec2a7871eddeca66f873f58ee750",
+    "date": "2023"
+  },
+  "java-for-programmers": {
+    "title": "Java for Programmers",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Java_for_Programmers.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/90966026f83232720c6d04c056fb3360",
+    "date": "2023"
+  },
+  "learn-java-conditionals-operators": {
+    "title": "Learn Java: Conditionals and Operators",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_Java_Conditionals_and_Operators.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/36081e84299196c1c909061be59c5cf9",
+    "date": "2023"
+  },
+  "learn-java-inheritance-polymorphism": {
+    "title": "Learn Java: Inheritance and Polymorphism",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_Java_Inheritance_and_Polymorphism.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/69cb3e8083ed4c2866b8ac264adf8512",
+    "date": "2023"
+  },
+  "learn-java-loops-arrays": {
+    "title": "Learn Java: Loops and Arrays",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_Java_Loops_and_Arrays.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/deed3d23a4d60bcf88d0879d1628d98d",
+    "date": "2023"
+  },
+  "learn-java-object-oriented-programming": {
+    "title": "Learn Java: Object-Oriented Programming",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_Java_Object-Oriented_Programming.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/23a06f0af71448c0a2ed456d6191e11e",
+    "date": "2023"
+  },
+  "learn-java-classes-methods-inheritance-polymorphism": {
+    "title": "Learn Java: Classes, Methods, Inheritance, and Polymorphism",
+    "provider": "Codecademy",
+    "issuer": "Codecademy",
+    "badgeImage": "/images/certificates/Codecademy/codecademy.png",
+    "pdfPath": "/certificates/codecademy/Learn_Java_Classes_Methods_Inheritance_and_Polymorphism.pdf",
+    "verificationUrl": "https://www.codecademy.com/profiles/JaysonAcosta272/certificates/02c8c9f4eed7545e0b4cc37a785ae026",
+    "date": "2023"
+  }
+}

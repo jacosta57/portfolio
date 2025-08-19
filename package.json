@@ -1,11 +1,12 @@
 {
-  "name": "portfolio-nextjs",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "dev:turbopack": "next dev --turbopack",
     "build": "next build && next-image-export-optimizer",
+    "build:images": "next-image-export-optimizer",
     "start": "serve out -p 3001",
     "lint": "next lint && tsc --noEmit",
     "format": "prettier --write .",
@@ -29,11 +30,28 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@types/node": "^20.19.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.6",
     "typescript": "^5"
-  }
+  },
+  "description": "Jayson Acosta's Portfolio website build with NextJS and Typescript",
+  "main": "src/app/layout.tsx",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaysonJAcosta5704/portfolio.git"
+  },
+  "keywords": [
+    "NextJS",
+    "TypeScript",
+    "Bootstrap"
+  ],
+  "author": "Jayson Acosta",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/JaysonJAcosta5704/portfolio/issues"
+  },
+  "homepage": "https://github.com/JaysonJAcosta5704/portfolio#readme"
 }
