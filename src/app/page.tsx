@@ -5,8 +5,17 @@ import Link from "next/link";
 import projects from "@/data/projects.json";
 import { FaChevronDown } from "react-icons/fa";
 import CredlyBadge from "@/components/ui/CredlyBadge";
+import CertificateCard from "@/components/ui/CertificateCard";
+import certificatesData from "@/data/certificates.json";
 
 export default function HomePage() {
+  const featuredCertificates = Object.keys(certificatesData)
+    .map((key) => ({
+      id: key,
+      ...certificatesData[key as keyof typeof certificatesData],
+    }))
+    .filter((cert) => cert.featured);
+
   return (
     <>
       <section className="position-relative min-vh-100 d-flex align-items-center">
@@ -27,9 +36,9 @@ export default function HomePage() {
             Featured Certificates
           </h2>
           <div className="row g-4">
-            <div className="col-md-4 mb-4">
-              <CredlyBadge badgeId="11cdeecb-77b1-4030-bb48-ab7cf872bf41" />
-            </div>
+            {featuredCertificates.map((certificate) => (
+              <CertificateCard key={certificate.id} certificate={certificate} />
+            ))}
           </div>
           <div className="text-center mt-4">
             <Link href="/certificates" className="btn btn-outline-light">
