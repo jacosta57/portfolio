@@ -10,12 +10,8 @@
     "lint": "next lint && tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "clean": "rm -rf out .next tsconfig.tsbuildinfo next-env.d.ts && npm ci"
-  },
-  "husky": {
-    "hooks":{
-      "pre-commit": "npm run format"
-    }
+    "clean": "rm -rf out .next tsconfig.tsbuildinfo next-env.d.ts && npm ci",
+    "prepare": "husky"
   },
   "dependencies": {
     "bootstrap": "^5.3.7",
