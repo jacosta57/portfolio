@@ -12,8 +12,14 @@
     "format:check": "prettier --check .",
     "clean": "rm -rf out .next tsconfig.tsbuildinfo next-env.d.ts && npm ci"
   },
+  "husky": {
+    "hooks":{
+      "pre-commit": "npm run format"
+    }
+  },
   "dependencies": {
     "bootstrap": "^5.3.7",
+    "husky": "^9.1.7",
     "jest": "^30.0.5",
     "next": "15.4.6",
     "next-image-export-optimizer": "^1.19.0",

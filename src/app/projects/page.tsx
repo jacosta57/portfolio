@@ -16,6 +16,7 @@ export default function ProjectListPage() {
   });
 
   const [activeFilter, setActiveFilter] = useState("All");
+  const [techDropdownOpen, setTechDropdownOpen] = useState(false);
 
   const categories = [
     ...new Set(projectsArray.map((project) => project.category)),
@@ -58,28 +59,34 @@ export default function ProjectListPage() {
             </button>
           ))}
 
-          <div className="dropdown d-inline-block">
+          <div className="dropdown d-inline-block position-relative">
             <button
               className="btn btn-outline-secondary dropdown-toggle me-2 mb-2"
               type="button"
-              id="techFilterDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
+              onClick={() => setTechDropdownOpen(!techDropdownOpen)}
             >
               Technologies
             </button>
-            <ul className="dropdown-menu" aria-labelledby="techFilterDropdown">
-              {technologies.slice(0, 10).map((tech, index) => (
-                <li key={index}>
-                  <button
-                    className="dropdown-item"
-                    onClick={() => setActiveFilter(tech)}
-                  >
-                    {tech}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            {techDropdownOpen && (
+              <ul
+                className="dropdown-menu show position-absolute"
+                style={{ zIndex: 1000 }}
+              >
+                {technologies.slice(0, 10).map((tech, index) => (
+                  <li key={index}>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => {
+                        setActiveFilter(tech);
+                        setTechDropdownOpen(false);
+                      }}
+                    >
+                      {tech}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
