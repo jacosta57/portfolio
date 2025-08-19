@@ -45,7 +45,7 @@ export default function HomePage() {
             Featured Projects
           </h2>
           <div className="row g-4">
-            <ProjectCard project={projects["COVEY Discord Bot"]} />
+            <ProjectCard project={projects["CoveyBot"]} />
             <ProjectCard project={projects["Konnect"]} />
             <ProjectCard project={projects["FinAntes"]} />
           </div>

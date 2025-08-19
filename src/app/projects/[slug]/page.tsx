@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import {
   FaGithub,
@@ -8,14 +6,23 @@ import {
   FaExternalLinkAlt,
 } from "react-icons/fa";
 import projects from "@/data/projects.json";
-import { usePathname } from "next/navigation";
+import ExportedImage from "next-image-export-optimizer";
 
 type Contribution = { name: string; percentage: number };
 
-export default function Project() {
-  const projectName = decodeURIComponent(
-    usePathname().replace("/projects/", ""),
-  );
+export async function generateStaticParams() {
+  return Object.keys(projects).map((slug) => ({ slug }));
+}
+
+type Params = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+export default async function ProjectsPage({ params }: Params) {
+  const { slug } = await params;
+  const projectName = slug;
   const project = projects[projectName as keyof typeof projects];
 
   if (!project) {
@@ -82,10 +89,12 @@ export default function Project() {
           <div className="project-gallery mb-5">
             <div className="row">
               <div className="col-md-12">
-                <img
+                <ExportedImage
                   src={project.images?.[0] || "https://picsum.photos/400/200"}
                   alt={project.name}
                   className="img-fluid main-image mb-3 rounded shadow"
+                  width={1920}
+                  height={1080}
                 />
               </div>
             </div>
@@ -93,10 +102,12 @@ export default function Project() {
               <div className="row">
                 {project.images.slice(1).map((image: string, index: number) => (
                   <div className="col-md-6" key={index}>
-                    <img
+                    <ExportedImage
                       src={image}
                       alt={`${project.name} screenshot ${index + 2}`}
                       className="img-fluid gallery-image mb-3 rounded shadow"
+                      width={1920}
+                      height={1080}
                     />
                   </div>
                 ))}
@@ -309,17 +320,19 @@ export default function Project() {
             {relatedProjects.map((relatedProject, index) => (
               <div className="col-md-4 mb-4" key={index}>
                 <Link
-                  href={`/projects/${relatedProject.name}`}
+                  href={`/projects/${relatedProject.slug}`}
                   className="text-decoration-none"
                 >
                   <div className="card h-100 bg-dark text-white project-card">
-                    <img
+                    <ExportedImage
                       src={
                         relatedProject.images?.[0] ||
                         "https://picsum.photos/400/200"
                       }
                       className="card-img-top project-image-sm"
                       alt={relatedProject.name}
+                      width={400}
+                      height={200}
                     />
                     <div className="card-body">
                       <h5 className="card-title">{relatedProject.name}</h5>

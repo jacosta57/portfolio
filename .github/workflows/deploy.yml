@@ -1,0 +1,59 @@
+name: Deploy
+on:
+  workflow_call:
+    inputs:
+      AWSAccountId:
+        required: true
+        type: string
+      BucketName:
+        required: true
+        type: string
+      Environment:
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: "arn:aws:iam::${{ inputs.AWSAccountId }}:role/GithubActionsRole"
+          role-session-name: "GithubActions-Deployment=Portfolio"
+
+      - name: Deploy Cloudformation
+        run: |
+          aws cloudformation deploy \
+           --template-file cloudformation.template.yml \
+           --stack-name portfolio-${{inputs.Environment}} \
+           --parameter-overrides BucketName=${{ inputs.BucketName }} \
+           --capabilities CAPABILITY_IAM \
+
+      - name: Get Website Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build-${{ github.run_id }}
+          path: out
+
+      - name: Upload to S3
+        run: aws s3 sync out s3://${{ inputs.BucketName }} --delete
+
+      - name: Comment PR with Deployment URL
+        if: ${{ inputs.Environment == 'dev' && github.event_name == 'pull_request' }}
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          comment-tag: deployment-url
+          message: |
+            🚀 **Development Deployment Ready!**
+
+            [View this PR deployed](https://${{inputs.BucketName}})
