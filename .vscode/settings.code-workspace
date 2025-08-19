@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "name": "Root",
+      "path": "..",
+    },
+    {
+      "name": "Public",
+      "path": "../public",
+    },
+    {
+      "name": "Pages",
+      "path": "../src/app",
+    },
+    {
+      "name": "Components",
+      "path": "../src/components",
+    },
+    {
+      "name": "Data",
+      "path": "../src/data",
+    },
+  ],
+}
