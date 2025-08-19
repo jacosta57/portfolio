@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
 import styles from "./layout.module.css";
 import Navigation from "@/components/layout/Navigation";
 
