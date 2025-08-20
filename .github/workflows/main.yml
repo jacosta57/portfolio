@@ -22,9 +22,8 @@ jobs:
     needs: verify
     uses: ./.github/workflows/deploy.yml
     with:
-      AWSAccountId: "${{ vars.AWS_ACCOUNT_ID }}"
-      BucketName: "dev.${{ vars.BASE_URL }}"
-      Environment: "dev"
+      AWSAccountId: "${{ vars.AWS_ACCOUNT_DEV_ID }}"
+      BaseURL: "${{ vars.BASE_URL }}"
     secrets: inherit
 
   deploy-prod:
@@ -33,7 +32,6 @@ jobs:
     needs: verify
     uses: ./.github/workflows/deploy.yml
     with:
-      AWSAccountId: "${{ vars.AWS_ACCOUNT_ID }}"
-      Environment: "prod"
-      BucketName: "${{ vars.BASE_URL }}"
+      AWSAccountId: "${{ vars.AWS_ACCOUNT_PROD_ID }}"
+      BaseURL: "${{ vars.BASE_URL }}"
     secrets: inherit
