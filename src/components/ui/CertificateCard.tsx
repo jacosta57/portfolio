@@ -8,7 +8,7 @@ interface Certificate {
   badgeImage: string;
   verificationUrl: string;
   date: string;
-  featured?: boolean;
+  featured: string;
 }
 
 interface CertificateCardProps {

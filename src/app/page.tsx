@@ -4,7 +4,6 @@ import Terminal from "@/components/ui/Terminal";
 import Link from "next/link";
 import projects from "@/data/projects.json";
 import { FaChevronDown } from "react-icons/fa";
-import CredlyBadge from "@/components/ui/CredlyBadge";
 import CertificateCard from "@/components/ui/CertificateCard";
 import certificatesData from "@/data/certificates.json";
 
@@ -14,7 +13,7 @@ export default function HomePage() {
       id: key,
       ...certificatesData[key as keyof typeof certificatesData],
     }))
-    .filter((cert) => cert.featured);
+    .filter((cert) => cert.featured === "true");
 
   return (
     <>
