@@ -24,5 +24,9 @@
       "name": "Public",
       "path": "../public",
     },
+    {
+      "name": "Library",
+      "path": "../src/lib",
+    },
   ],
 }
