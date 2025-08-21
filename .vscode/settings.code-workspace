@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "name": "Github Workflows",
+      "path": "../.github/workflows",
+    },
+    {
+      "name": "Root",
+      "path": "..",
+    },
+    {
+      "name": "Components",
+      "path": "../src/components",
+    },
+    {
+      "name": "Data",
+      "path": "../src/data",
+    },
+    {
+      "name": "Pages",
+      "path": "../src/app",
+    },
+    {
+      "name": "Public",
+      "path": "../public",
+    },
+  ],
+}

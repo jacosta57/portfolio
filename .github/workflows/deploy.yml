@@ -5,10 +5,7 @@ on:
       AWSAccountId:
         required: true
         type: string
-      BucketName:
-        required: true
-        type: string
-      Environment:
+      BaseURL:
         required: true
         type: string
 
@@ -35,8 +32,8 @@ jobs:
         run: |
           aws cloudformation deploy \
            --template-file cloudformation.template.yml \
-           --stack-name portfolio-${{inputs.Environment}} \
-           --parameter-overrides BucketName=${{ inputs.BucketName }} \
+           --stack-name portfolio \
+           --parameter-overrides BucketName=${{ inputs.BaseURL }} \
            --capabilities CAPABILITY_IAM \
 
       - name: Get Website Artifact
@@ -46,14 +43,14 @@ jobs:
           path: out
 
       - name: Upload to S3
-        run: aws s3 sync out s3://${{ inputs.BucketName }} --delete
+        run: aws s3 sync out s3://${{ inputs.BaseURL }} --delete
 
       - name: Comment PR with Deployment URL
-        if: ${{ inputs.Environment == 'dev' && github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'pull_request' }}
         uses: thollander/actions-comment-pull-request@v3
         with:
           comment-tag: deployment-url
           message: |
             🚀 **Development Deployment Ready!**
 
-            [View this PR deployed](https://${{inputs.BucketName}})
+            [View this PR deployed](https://dev.${{inputs.BaseURL}})

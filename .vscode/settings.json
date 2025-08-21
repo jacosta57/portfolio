@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    ".github": true,
+    ".husky": true,
+    "public": true,
+    "src": true
+  },
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "explorer.excludeGitIgnore": true
+}

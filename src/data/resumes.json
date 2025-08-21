@@ -1,0 +1,56 @@
+{
+  "general-software": {
+    "title": "General Software Engineer",
+    "description": "Comprehensive technical background showcasing full-stack development, problem-solving, and software engineering fundamentals.",
+    "fileName": "software-engineer.pdf",
+    "technologies": ["JavaScript", "Java", "React", "Node.js", "AWS"],
+    "highlights": [
+      "Full-stack development experience",
+      "Algorithm optimization",
+      "Team leadership & mentoring",
+      "Cross-platform development"
+    ]
+  },
+  "cloud-devops": {
+    "title": "Cloud & DevOps Engineer",
+    "description": "Infrastructure automation, cloud architecture, and DevOps practices with hands-on AWS experience.",
+    "fileName": "software-engineer.pdf",
+    "technologies": ["AWS", "Terraform", "Docker", "CI/CD", "Infrastructure"],
+    "highlights": [
+      "AWS Lambda & RDS management",
+      "Infrastructure automation",
+      "Cost optimization (50% reduction)",
+      "Database migration expertise"
+    ]
+  },
+  "fullstack": {
+    "title": "Full Stack Developer",
+    "description": "End-to-end web application development with modern frameworks, databases, and API integration.",
+    "fileName": "software-engineer.pdf",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "GraphQL",
+      "REST APIs"
+    ],
+    "highlights": [
+      "Frontend & backend development",
+      "Database design & optimization",
+      "API architecture & integration",
+      "Modern web technologies"
+    ]
+  },
+  "mobile": {
+    "title": "Mobile Developer",
+    "description": "Android application development with focus on performance optimization and user experience.",
+    "fileName": "software-engineer.pdf",
+    "technologies": ["Java", "Android SDK", "XML", "Mobile UX", "Performance"],
+    "highlights": [
+      "Native Android development",
+      "Performance optimization (50% faster)",
+      "Team collaboration & debugging",
+      "Mobile-first design principles"
+    ]
+  }
+}

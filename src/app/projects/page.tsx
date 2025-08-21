@@ -43,7 +43,7 @@ export default function ProjectListPage() {
         </h2>
         <div className="filter-buttons">
           <button
-            className={`btn ${activeFilter === "All" ? "btn-primary" : "btn-outline-primary"} me-2 mb-2`}
+            className={`filter-btn ${activeFilter === "All" ? "btn-primary" : "btn-outline-primary"} me-2 mb-2`}
             onClick={() => setActiveFilter("All")}
           >
             All
@@ -52,7 +52,7 @@ export default function ProjectListPage() {
           {categories.map((category, index) => (
             <button
               key={index}
-              className={`btn ${activeFilter === category ? "btn-primary" : "btn-outline-primary"} me-2 mb-2`}
+              className={`filter-btn ${activeFilter === category ? "btn-primary" : "btn-outline-primary"} me-2 mb-2`}
               onClick={() => setActiveFilter(category)}
             >
               {category}
@@ -61,7 +61,7 @@ export default function ProjectListPage() {
 
           <div className="dropdown d-inline-block position-relative">
             <button
-              className="btn btn-outline-secondary dropdown-toggle me-2 mb-2"
+              className="filter-btn btn-outline-secondary dropdown-toggle me-2 mb-2"
               type="button"
               onClick={() => setTechDropdownOpen(!techDropdownOpen)}
             >
@@ -69,7 +69,7 @@ export default function ProjectListPage() {
             </button>
             {techDropdownOpen && (
               <ul
-                className="dropdown-menu show position-absolute"
+                className="filter-dropdown dropdown-menu show"
                 style={{ zIndex: 1000 }}
               >
                 {technologies.slice(0, 10).map((tech, index) => (
