@@ -4,9 +4,9 @@ import {
   FaProjectDiagram,
   FaCertificate,
   FaFileAlt,
-  FaClock,
-  FaBlog,
-  FaEnvelope,
+  // FaClock,
+  // FaBlog,
+  // FaEnvelope,
 } from "react-icons/fa";
 
 export default function NotFound() {
@@ -35,24 +35,24 @@ export default function NotFound() {
       icon: FaFileAlt,
       description: "Download my resume",
     },
-    {
-      name: "Timeline",
-      href: "/timeline",
-      icon: FaClock,
-      description: "View my journey",
-    },
-    {
-      name: "Blog",
-      href: "/blog",
-      icon: FaBlog,
-      description: "Read my articles",
-    },
-    {
-      name: "Contact",
-      href: "/contact",
-      icon: FaEnvelope,
-      description: "Get in touch",
-    },
+    // {
+    //   name: "Timeline",
+    //   href: "/timeline",
+    //   icon: FaClock,
+    //   description: "View my journey",
+    // },
+    // {
+    //   name: "Blog",
+    //   href: "/blog",
+    //   icon: FaBlog,
+    //   description: "Read my articles",
+    // },
+    // {
+    //   name: "Contact",
+    //   href: "/contact",
+    //   icon: FaEnvelope,
+    //   description: "Get in touch",
+    // },
   ];
 
   return (

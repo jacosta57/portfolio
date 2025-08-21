@@ -16,7 +16,6 @@ export default function Navigation() {
     setIsMenuOpen(false);
   };
 
-  // Helper function to check if link is active
   const isActiveLink = (href: string) => {
     if (href === "/") {
       return pathname === "/";
@@ -73,7 +72,7 @@ export default function Navigation() {
                 Resume
               </Link>
             </li>
-            <li className="nav-item mx-2">
+            {/* <li className="nav-item mx-2">
               <Link
                 className={`nav-link ${isActiveLink("/timeline") ? "active" : ""}`}
                 href="/timeline"
@@ -81,8 +80,8 @@ export default function Navigation() {
               >
                 Timeline
               </Link>
-            </li>
-            <li className="nav-item mx-2">
+            </li> */}
+            {/* <li className="nav-item mx-2">
               <Link
                 className={`nav-link ${isActiveLink("/blog") ? "active" : ""}`}
                 href="/blog"
@@ -90,8 +89,8 @@ export default function Navigation() {
               >
                 Blog
               </Link>
-            </li>
-            <li className="nav-item mx-2">
+            </li> */}
+            {/* <li className="nav-item mx-2">
               <Link
                 className={`nav-link ${isActiveLink("/contact") ? "active" : ""}`}
                 href="/contact"
@@ -99,7 +98,7 @@ export default function Navigation() {
               >
                 Contact
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
