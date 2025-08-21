@@ -21,14 +21,15 @@ export default function HomePage() {
         <div className="container">
           <Terminal />
         </div>
+
+        <div className="position-absolute bottom-0 start-50 translate-middle-x mb-4 text-center">
+          <p className="mb-1">Scroll Down</p>
+          <FaChevronDown
+            style={{ animation: "bounce 2s infinite" }}
+            className="mt-4"
+          />
+        </div>
       </section>
-      <div className="position-absolute bottom-0 start-50 translate-middle-x mb-4 text-center">
-        <p className="mb-1">Scroll Down</p>
-        <FaChevronDown
-          style={{ animation: "bounce 2s infinite" }}
-          className="mt-4"
-        />
-      </div>
       <section id="certificates" className="py-5">
         <div className="container">
           <h2 className="mb-5 border-bottom border-primary pb-2 d-inline-block">
