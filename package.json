@@ -12,6 +12,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "clean": "rm -rf out .next tsconfig.tsbuildinfo next-env.d.ts && npm ci",
+    "clean:noinstall": "rm -rf out .next tsconfig.tsbuildinfo next-env.d.ts",
     "prepare": "husky"
   },
   "dependencies": {

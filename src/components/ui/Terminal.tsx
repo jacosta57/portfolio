@@ -1,125 +1,60 @@
-import React, { useState, useRef, useEffect, JSX, useMemo } from "react";
-import terminalFiles from "@/data/terminalFiles.json";
+import React, { useState, useRef, useEffect, JSX } from "react";
 import styles from "./Terminal.module.css";
 import ASCIIWelcome from "./ASCIIWelcome";
-import { Command, Files } from "@/lib/Types";
-
-type CommandFunction = (args: string[]) => JSX.Element;
-type CommandMap = {
-  [key: string]: CommandFunction;
-};
+import { Command } from "@/lib/Types";
+import { parseCommand, getCommand } from "@/lib/commands";
 
 export default function Terminal(): JSX.Element {
-  const availableFiles = useMemo(
-    () => Object.keys(terminalFiles).sort().join("  "),
-    [],
-  );
   const [history, setHistory] = useState<Command[]>([]);
   const [command, setCommand] = useState("");
 
   const terminalContainerRef = useRef<HTMLDivElement>(null);
 
-  // On overflow, jump to the end of the scrollbar.
-  useEffect(() => {
-    if (terminalContainerRef.current) {
-      const container = terminalContainerRef.current;
-      container.scrollTop = container.scrollHeight;
-    }
-  }, [history]);
-
-  const commandHelper: CommandMap = {
-    help: () => (
-      <div className={styles.terminalOutput}>
-        <p>help - display this help section</p>
-        <p>whoami - information about me</p>
-        <p>ls - list all files</p>
-        <p>cat &#123;file&#125; - read file</p>
-        <p>clear - clear the terminal</p>
-      </div>
-    ),
-
-    whoami: () => <p>Jayson Acosta | Computer & Software Engineer</p>,
-
-    ls: () => <p>{availableFiles}</p>,
-
-    cat: (args: string[]) => {
-      if (args.length === 0) {
-        return <pre>cat: missing file operand</pre>;
-      }
-
-      const files = terminalFiles as Files;
-
-      const outputs = args.map((filename, index) => {
-        // Handle each file individually
-        if (!files[filename]) {
-          return (
-            <div key={index}>
-              <pre>cat: {filename}: No such file or directory</pre>
-            </div>
-          );
-        }
-
-        let content;
-        if (filename.endsWith(".json")) {
-          content = <pre>{JSON.stringify(files[filename], null, 2)}</pre>;
-        } else {
-          content = <p>{String(files[filename])}</p>;
-        }
-
-        return (
-          <div key={index}>
-            {args.length > 1 && (
-              <div className="small mb-1">==&gt; {filename} &lt;==</div>
-            )}
-            {content}
-            {index < args.length - 1 && <br />}
-          </div>
-        );
-      });
-
-      return <div>{outputs}</div>;
-    },
-  };
+  // Auto-scroll to bottom
+  useEffect(
+    () =>
+      terminalContainerRef.current?.scrollTo(
+        0,
+        terminalContainerRef.current.scrollHeight,
+      ),
+    [history],
+  );
 
   const handleCommand = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const [commandName, ...args] = command.split(" ");
-    const cmd = commandName.toLowerCase();
-
-    if (cmd === "clear") {
-      setHistory([]);
-      setCommand("");
-      return;
-    }
-
-    if (cmd === "") {
+    if (command === "") {
       setHistory((prev) => [...prev, { name: command, output: <></> }]);
       setCommand("");
       return;
     }
 
-    const commandFn =
-      commandHelper[cmd] ||
-      (() => (
-        <pre>
-          Command not found: {commandName}. Type &apos;help&apos; for available
-          commands.
-        </pre>
-      ));
+    const commandTrimmed = command.toLowerCase().trim();
 
-    const output = commandFn(args);
+    if (commandTrimmed === "clear") {
+      setHistory([]);
+      setCommand("");
+      return;
+    }
+
+    const { command: cmd, args } = parseCommand(commandTrimmed);
+    const commandFunc = getCommand(cmd);
+
+    const output: JSX.Element = commandFunc ? (
+      commandFunc(args)
+    ) : (
+      <p>
+        Command not found: {cmd}. Type &apos;help&apos; for available commands.
+      </p>
+    );
+
     setHistory((prev) => [...prev, { name: command, output }]);
     setCommand("");
   };
 
-  // Any click on the terminal will focus onto the input box
+  // Focus input on click
   const input = useRef<HTMLInputElement>(null);
-  const handleClick = () => {
-    if (input.current) {
-      input.current.focus();
-    }
-  };
+  const handleClick = () => input.current?.focus();
 
   return (
     <div
@@ -141,6 +76,7 @@ export default function Terminal(): JSX.Element {
       </div>
 
       <ASCIIWelcome />
+
       {history.map((entry: Command, index) => (
         <div key={index}>
           <div className="d-flex mb-3" style={{ overflowWrap: "break-word" }}>

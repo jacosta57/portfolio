@@ -4,7 +4,6 @@ import ExportedImage from "next-image-export-optimizer";
 interface Project {
   name: string;
   slug: string;
-  status?: string;
   images?: string[];
   shortDescription?: string;
   description?: string;

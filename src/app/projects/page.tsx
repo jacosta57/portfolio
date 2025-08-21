@@ -10,7 +10,6 @@ export default function ProjectListPage() {
     return {
       ...project,
       featured: project.featured || false,
-      status: project.status || "Completed",
       category: project.category || "Development",
     };
   });
