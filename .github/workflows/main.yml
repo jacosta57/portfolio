@@ -22,8 +22,6 @@ jobs:
   verify:
     name: Verify
     uses: ./.github/workflows/verify.yml
-    with:
-      Environment: ${{ inputs.Environment }}
 
   deploy-dev:
     name: Deploy to Development
