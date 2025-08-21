@@ -74,11 +74,6 @@ export default async function ProjectsPage({ params }: Params) {
           <div className="project-header mb-4">
             <h1>{project.name}</h1>
             <div className="d-flex align-items-center mb-3">
-              <span
-                className={`badge ${project.status === "Completed" ? "bg-success" : "bg-primary"} me-3`}
-              >
-                {project.status || "Completed"}
-              </span>
               <span className="text-muted">
                 <FaCalendarAlt className="me-1" /> {project.date || "Ongoing"}
               </span>
