@@ -1,5 +1,19 @@
 name: Deploy
 on:
+  workflow_dispatch:
+    inputs:
+      Environment:
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+        description: "Environment to Deploy to"
+      BaseURL:
+        required: true
+        type: string
+        description: "Base URL of the website"
+
   workflow_call:
     inputs:
       AWSAccountId:
@@ -39,14 +53,14 @@ jobs:
       - name: Get Website Artifact
         uses: actions/download-artifact@v4
         with:
-          name: build-${{ github.run_id }}
+          name: website-build
           path: out
 
       - name: Upload to S3
         run: aws s3 sync out s3://${{ inputs.BaseURL }} --delete
 
       - name: Comment PR with Deployment URL
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'pull_request' || inputs.Environment == 'dev' }}
         uses: thollander/actions-comment-pull-request@v3
         with:
           comment-tag: deployment-url
