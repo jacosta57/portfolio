@@ -2,7 +2,11 @@ name: Verify
 on:
   pull_request: {}
   workflow_dispatch: {}
-  workflow_call: {}
+  workflow_call:
+    inputs:
+      Environment:
+        required: true
+        type: string
 
 jobs:
   cloudformation-lint:
@@ -48,6 +52,7 @@ jobs:
         run: npm run build
 
       - name: Upload Website Artifact
+        if: inputs.Environment
         uses: actions/upload-artifact@v4
         with:
           name: website-build
