@@ -11,7 +11,7 @@ on:
         description: "Environment to Deploy to"
       BaseURL:
         required: true
-        type: string
+        type: environment
         description: "Base URL of the website"
 
   workflow_call:
