@@ -19,8 +19,12 @@ permissions:
   pull-requests: write
 
 jobs:
+  verify:
+    name: Verify
+    uses: ./.github/workflows/verify.yml
   deploy-dev:
     name: Deploy to Development
+    needs: verify
     if: github.event_name == 'pull_request' || inputs.Environment == 'dev'
     uses: ./.github/workflows/deploy.yml
     with:
@@ -30,6 +34,7 @@ jobs:
 
   deploy-prod:
     name: Deploy to Production
+    needs: verify
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || inputs.Environment == 'prod')
     uses: ./.github/workflows/deploy.yml
     with:
