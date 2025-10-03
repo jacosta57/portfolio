@@ -40,14 +40,12 @@ export default function ResumePage() {
 
   return (
     <div className="container mt-5">
-      {/* Header */}
       <div className="mb-4">
         <h2 className="border-bottom border-primary pb-2 d-inline-block">
           Résumés - Tailored for Different Roles
         </h2>
       </div>
 
-      {/* Resume Grid */}
       <div className="row g-4">
         {resumes.map((resume) => (
           <div className="col-md-6 col-lg-6 mb-4" key={resume.id}>
@@ -56,7 +54,6 @@ export default function ResumePage() {
                 <h5 className="card-title text-primary">{resume.title}</h5>
                 <p className="card-text">{resume.description}</p>
 
-                {/* Technologies */}
                 <div className="mb-3">
                   {resume.technologies.slice(0, 4).map((tech, index) => (
                     <span
@@ -73,7 +70,6 @@ export default function ResumePage() {
                   )}
                 </div>
 
-                {/* Key Highlights */}
                 <div className="mb-3">
                   <small className="text-muted d-block mb-2">
                     Key Highlights:
@@ -88,7 +84,6 @@ export default function ResumePage() {
                   </ul>
                 </div>
 
-                {/* Action Buttons */}
                 <div className="d-flex justify-content-between align-items-center mt-auto">
                   <button
                     className="btn btn-outline-light"
@@ -111,7 +106,6 @@ export default function ResumePage() {
         ))}
       </div>
 
-      {/* Modal */}
       {selectedResume && (
         <div
           className="modal show d-block"

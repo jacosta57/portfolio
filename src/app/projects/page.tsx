@@ -35,7 +35,6 @@ export default function ProjectListPage() {
 
   return (
     <div className="container mt-5">
-      {/* Filters Section */}
       <div className="mb-4 d-flex flex-wrap align-items-center justify-content-between">
         <h2 className="border-bottom border-primary pb-2 d-inline-block me-3">
           All Projects
@@ -90,7 +89,6 @@ export default function ProjectListPage() {
         </div>
       </div>
 
-      {/* Projects Grid */}
       <div className="row g-4">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project, index) => (

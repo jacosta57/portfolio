@@ -70,7 +70,6 @@ export default async function ProjectsPage({ params }: Params) {
 
       <div className="row">
         <div className="col-lg-8">
-          {/* Project Header */}
           <div className="project-header mb-4">
             <h1>{project.name}</h1>
             <div className="d-flex align-items-center mb-3">
@@ -80,7 +79,6 @@ export default async function ProjectsPage({ params }: Params) {
             </div>
           </div>
 
-          {/* Project Gallery */}
           <div className="project-gallery mb-5">
             <div className="row">
               <div className="col-md-12">
@@ -110,14 +108,12 @@ export default async function ProjectsPage({ params }: Params) {
             )}
           </div>
 
-          {/* Project Description */}
           <div className="project-description mb-5">
             <h2 className="border-bottom border-primary pb-2 mb-4">
               Project Overview
             </h2>
             <div>{project.fullDescription || project.description}</div>
 
-            {/* Problem-Solution Section (if available) */}
             {"problem" in project &&
               "solution" in project &&
               project.problem &&
@@ -132,7 +128,6 @@ export default async function ProjectsPage({ params }: Params) {
               )}
           </div>
 
-          {/* Features Section (if available) */}
           {project.features && project.features.length > 0 && (
             <div className="project-features mb-5">
               <h2 className="border-bottom border-primary pb-2 mb-4">
@@ -146,7 +141,6 @@ export default async function ProjectsPage({ params }: Params) {
             </div>
           )}
 
-          {/* Challenges and Learnings Section (if available) */}
           {(project.challenges || project.learnings) && (
             <div className="project-challenges mb-5">
               <h2 className="border-bottom border-primary pb-2 mb-4">
@@ -195,10 +189,8 @@ export default async function ProjectsPage({ params }: Params) {
           )}
         </div>
 
-        {/* Sidebar */}
         <div className="col-lg-4">
           <div className="sticky-sidebar">
-            {/* Project Links */}
             <div className="card mb-4 bg-dark text-white">
               <div className="card-header bg-dark border-bottom border-secondary">
                 <h5 className="mb-0">Project Links</h5>
@@ -230,7 +222,6 @@ export default async function ProjectsPage({ params }: Params) {
               </div>
             </div>
 
-            {/* Contributions Section (if available) */}
             {"contributions" in project &&
               project.contributions &&
               project.contributions.length > 0 && (
@@ -262,8 +253,6 @@ export default async function ProjectsPage({ params }: Params) {
                   </div>
                 </div>
               )}
-
-            {/* Future Improvements Section (if available) */}
             {"futureImprovements" in project &&
               project.futureImprovements &&
               project.futureImprovements.length > 0 && (
@@ -283,7 +272,6 @@ export default async function ProjectsPage({ params }: Params) {
                 </div>
               )}
 
-            {/* Tech Stack */}
             <div className="card mb-4 bg-dark text-white">
               <div className="card-header bg-dark border-bottom border-secondary">
                 <h5 className="mb-0">Tech Stack</h5>
@@ -305,7 +293,6 @@ export default async function ProjectsPage({ params }: Params) {
         </div>
       </div>
 
-      {/* Related Projects Section */}
       {relatedProjects.length > 0 && (
         <div className="related-projects mt-5">
           <h2 className="border-bottom border-primary pb-2 mb-4">

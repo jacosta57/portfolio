@@ -74,7 +74,6 @@ export default function NotFound() {
             </p>
           </div>
 
-          {/* Navigation Options */}
           <div className="mb-4">
             <h3 className="border-bottom border-primary pb-2 d-inline-block mb-4">
               Where would you like to go?
