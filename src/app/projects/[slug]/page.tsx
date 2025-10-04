@@ -72,7 +72,7 @@ export default async function ProjectsPage({ params }: Params) {
           <div className="project-header mb-4">
             <h1>{project.name}</h1>
             <div className="d-flex align-items-center mb-3">
-              <span className="text-muted">
+              <span>
                 <FaCalendarAlt className="me-1" /> {project.date || "Ongoing"}
               </span>
               {project.seniorDesign && (

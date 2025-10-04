@@ -100,7 +100,7 @@ export default function ProjectListPage() {
           ))
         ) : (
           <div className="col-12 text-center py-5">
-            <p className="text-muted">No projects match the selected filter.</p>
+            <p>No projects match the selected filter.</p>
             <button
               className="btn btn-primary mt-2"
               onClick={() => setActiveFilter("All")}

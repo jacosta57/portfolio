@@ -205,23 +205,21 @@ export default function ExperiencePage() {
                 <div className="p-3">
                   <h2 className="text-primary mb-2">50%</h2>
                   <p className="mb-0">Cost Reduction</p>
-                  <small className="text-muted">
-                    Through database optimization
-                  </small>
+                  <small>Through database optimization</small>
                 </div>
               </div>
               <div className="col-md-4 mb-3">
                 <div className="p-3">
                   <h2 className="text-success mb-2">6+ hrs</h2>
                   <p className="mb-0">Time Saved Weekly</p>
-                  <small className="text-muted">Via workflow automation</small>
+                  <small>Via workflow automation</small>
                 </div>
               </div>
               <div className="col-md-4 mb-3">
                 <div className="p-3">
                   <h2 className="text-info mb-2">3 hrs</h2>
                   <p className="mb-0">Faster Onboarding</p>
-                  <small className="text-muted">Per new employee</small>
+                  <small>Per new employee</small>
                 </div>
               </div>
             </div>

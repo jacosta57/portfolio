@@ -71,9 +71,7 @@ export default function ResumePage() {
                 </div>
 
                 <div className="mb-3">
-                  <small className="text-muted d-block mb-2">
-                    Key Highlights:
-                  </small>
+                  <small className="d-block mb-2">Key Highlights:</small>
                   <ul className="list-unstyled small">
                     {resume.highlights.slice(0, 3).map((highlight, index) => (
                       <li key={index} className="mb-1">
