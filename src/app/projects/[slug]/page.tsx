@@ -4,7 +4,6 @@ import {
   FaCalendarAlt,
   FaArrowLeft,
   FaExternalLinkAlt,
-  FaFileAlt,
 } from "react-icons/fa";
 import projects from "@/data/projects.json";
 import ExportedImage from "next-image-export-optimizer";
