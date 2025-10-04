@@ -4,11 +4,11 @@ import {
   FaCalendarAlt,
   FaArrowLeft,
   FaExternalLinkAlt,
+  FaFileAlt,
 } from "react-icons/fa";
 import projects from "@/data/projects.json";
 import ExportedImage from "next-image-export-optimizer";
-
-type Contribution = { name: string; percentage: number };
+import type { Project, Contribution, SupportingDocument } from "@/lib/Types";
 
 export async function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({ slug }));
@@ -23,7 +23,7 @@ type Params = {
 export default async function ProjectsPage({ params }: Params) {
   const { slug } = await params;
   const projectName = slug;
-  const project = projects[projectName as keyof typeof projects];
+  const project = projects[projectName as keyof typeof projects] as Project;
 
   if (!project) {
     return (
@@ -76,21 +76,33 @@ export default async function ProjectsPage({ params }: Params) {
               <span className="text-muted">
                 <FaCalendarAlt className="me-1" /> {project.date || "Ongoing"}
               </span>
+              {project.seniorDesign && (
+                <span className="badge bg-primary ms-3">
+                  Senior Design Project
+                </span>
+              )}
             </div>
+            {project.role && (
+              <div className="mb-3">
+                <strong>Role:</strong> {project.role}
+              </div>
+            )}
           </div>
 
           <div className="project-gallery mb-5">
-            <div className="row">
-              <div className="col-md-12">
-                <ExportedImage
-                  src={project.images?.[0] || "https://picsum.photos/400/200"}
-                  alt={project.name}
-                  className="img-fluid main-image mb-3 rounded shadow"
-                  width={1920}
-                  height={1080}
-                />
+            {project.images && project.images.length > 0 && (
+              <div className="row">
+                <div className="col-md-12">
+                  <ExportedImage
+                    src={project.images[0]}
+                    alt={project.name}
+                    className="img-fluid main-image mb-3 rounded shadow"
+                    width={1920}
+                    height={1080}
+                  />
+                </div>
               </div>
-            </div>
+            )}
             {project.images && project.images.length > 1 && (
               <div className="row">
                 {project.images.slice(1).map((image: string, index: number) => (
@@ -114,18 +126,22 @@ export default async function ProjectsPage({ params }: Params) {
             </h2>
             <div>{project.fullDescription || project.description}</div>
 
-            {"problem" in project &&
-              "solution" in project &&
-              project.problem &&
-              project.solution && (
-                <div className="problem-solution mt-4">
-                  <h3 className="mt-4">Problem</h3>
-                  <div>{project.problem}</div>
+            {project.problem && project.solution && (
+              <div className="problem-solution mt-4">
+                <h3 className="mt-4">Problem</h3>
+                <div>{project.problem}</div>
 
-                  <h3 className="mt-4">Solution</h3>
-                  <div>{project.solution}</div>
-                </div>
-              )}
+                <h3 className="mt-4">Solution</h3>
+                <div>{project.solution}</div>
+              </div>
+            )}
+
+            {project.bigPictureContribution && (
+              <div className="mt-4">
+                <h3 className="mt-4">Big Picture Contribution</h3>
+                <div>{project.bigPictureContribution}</div>
+              </div>
+            )}
           </div>
 
           {project.features && project.features.length > 0 && (
@@ -187,6 +203,55 @@ export default async function ProjectsPage({ params }: Params) {
               </div>
             </div>
           )}
+
+          {project.skillsGained && (
+            <div className="project-skills mb-5">
+              <h2 className="border-bottom border-primary pb-2 mb-4">
+                Skills & Knowledge Gained
+              </h2>
+              <div className="row">
+                {project.skillsGained.technical &&
+                  project.skillsGained.technical.length > 0 && (
+                    <div className="col-md-6 mb-4">
+                      <div className="card h-100 bg-dark text-white">
+                        <div className="card-header bg-dark border-bottom border-secondary">
+                          <h5 className="mb-0">Technical Skills</h5>
+                        </div>
+                        <div className="card-body">
+                          <ul>
+                            {project.skillsGained.technical.map(
+                              (skill: string, index: number) => (
+                                <li key={index}>{skill}</li>
+                              ),
+                            )}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                {project.skillsGained.professional &&
+                  project.skillsGained.professional.length > 0 && (
+                    <div className="col-md-6 mb-4">
+                      <div className="card h-100 bg-dark text-white">
+                        <div className="card-header bg-dark border-bottom border-secondary">
+                          <h5 className="mb-0">Professional Skills</h5>
+                        </div>
+                        <div className="card-body">
+                          <ul>
+                            {project.skillsGained.professional.map(
+                              (skill: string, index: number) => (
+                                <li key={index}>{skill}</li>
+                              ),
+                            )}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="col-lg-4">
@@ -222,39 +287,76 @@ export default async function ProjectsPage({ params }: Params) {
               </div>
             </div>
 
-            {"contributions" in project &&
-              project.contributions &&
-              project.contributions.length > 0 && (
+            {project.supportingDocuments &&
+              project.supportingDocuments.length > 0 && (
                 <div className="card mb-4 bg-dark text-white">
                   <div className="card-header bg-dark border-bottom border-secondary">
-                    <h5 className="mb-0">My Contributions</h5>
+                    <h5 className="mb-0">Supporting Documents</h5>
                   </div>
                   <div className="card-body">
-                    {project.contributions.map(
-                      (contribution: Contribution, index: number) => (
+                    {project.supportingDocuments.map(
+                      (doc: SupportingDocument, index: number) => (
                         <div key={index} className="mb-3">
-                          <div className="d-flex justify-content-between mb-1">
-                            <span>{contribution.name}</span>
-                            <span>{contribution.percentage}%</span>
-                          </div>
-                          <div className="progress bg-secondary">
-                            <div
-                              className={`progress-bar ${getProgressBarVariant(contribution.percentage)}`}
-                              role="progressbar"
-                              style={{ width: `${contribution.percentage}%` }}
-                              aria-valuenow={contribution.percentage}
-                              aria-valuemin={0}
-                              aria-valuemax={100}
-                            ></div>
-                          </div>
+                          <h6 className="text-primary mb-1">{doc.title}</h6>
+                          <p className="small mb-2">{doc.description}</p>
+                          {doc.path && (
+                            <a
+                              href={doc.path}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-sm btn-outline-light"
+                            >
+                              View Document
+                            </a>
+                          )}
+                          {doc.url && (
+                            <a
+                              href={doc.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-sm btn-outline-light"
+                            >
+                              Visit Link
+                            </a>
+                          )}
                         </div>
                       ),
                     )}
                   </div>
                 </div>
               )}
-            {"futureImprovements" in project &&
-              project.futureImprovements &&
+
+            {project.contributions && project.contributions.length > 0 && (
+              <div className="card mb-4 bg-dark text-white">
+                <div className="card-header bg-dark border-bottom border-secondary">
+                  <h5 className="mb-0">My Contributions</h5>
+                </div>
+                <div className="card-body">
+                  {project.contributions.map(
+                    (contribution: Contribution, index: number) => (
+                      <div key={index} className="mb-3">
+                        <div className="d-flex justify-content-between mb-1">
+                          <span>{contribution.name}</span>
+                          <span>{contribution.percentage}%</span>
+                        </div>
+                        <div className="progress bg-secondary">
+                          <div
+                            className={`progress-bar ${getProgressBarVariant(contribution.percentage)}`}
+                            role="progressbar"
+                            style={{ width: `${contribution.percentage}%` }}
+                            aria-valuenow={contribution.percentage}
+                            aria-valuemin={0}
+                            aria-valuemax={100}
+                          ></div>
+                        </div>
+                      </div>
+                    ),
+                  )}
+                </div>
+              </div>
+            )}
+
+            {project.futureImprovements &&
               project.futureImprovements.length > 0 && (
                 <div className="card mb-4 bg-dark text-white">
                   <div className="card-header bg-dark border-bottom border-secondary">
@@ -299,7 +401,7 @@ export default async function ProjectsPage({ params }: Params) {
             You might also like
           </h2>
           <div className="row">
-            {relatedProjects.map((relatedProject, index) => (
+            {relatedProjects.map((relatedProject: Project, index: number) => (
               <div className="col-md-4 mb-4" key={index}>
                 <Link
                   href={`/projects/${relatedProject.slug}`}
@@ -309,7 +411,7 @@ export default async function ProjectsPage({ params }: Params) {
                     <ExportedImage
                       src={
                         relatedProject.images?.[0] ||
-                        "https://picsum.photos/400/200"
+                        "images/projects/placeholder.png"
                       }
                       className="card-img-top project-image-sm"
                       alt={relatedProject.name}
