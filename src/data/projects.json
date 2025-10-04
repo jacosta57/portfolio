@@ -1,4 +1,80 @@
 {
+  "GitTor": {
+    "name": "GitTor - Iowa State Senior Design",
+    "slug": "GitTor",
+    "description": "Senior Design capstone project developing a decentralized Git hosting platform using peer-to-peer torrenting protocol. Eliminates single points of failure by distributing repositories across users. Features CLI tool (C) and full-stack web application (Spring Boot, Angular, PostgreSQL) with GPG signature verification.",
+    "shortDescription": "Decentralized P2P Git hosting - Senior Design (491/492)",
+    "fullDescription": "GitTor is my senior design capstone project that reimagines how developers collaborate on code by eliminating centralized hosting platforms. Traditional platforms like GitHub and GitLab create single points of failure - if the platform goes down, collaboration halts. GitTor solves this by using a peer-to-peer torrenting protocol where every contributor hosts the repository, ensuring continuous availability. The system consists of two main components: a CLI tool written in C that handles repository seeding and leeching with torrent files, and a full-stack web application (Spring Boot backend, Angular frontend) that serves as a discovery platform for repositories. Security is ensured through GPG signature verification, preventing unauthorized commits. As Quality Assurance Lead for a 6-person team, I'm responsible for establishing testing frameworks, ensuring code quality, designing frontend pages, and maintaining comprehensive documentation.",
+    "problem": "Current Git hosting platforms create single points of failure. When GitHub or GitLab experience downtime, collaboration completely stops. Additionally, centralized platforms can modify repository contents, violate privacy policies, or arbitrarily block contributors.",
+    "solution": "Built a decentralized system where repositories are shared via P2P torrenting. Each contributor hosts the repository, eliminating downtime risk. GPG signatures ensure only authorized contributors can commit, and torrent file hashing guarantees data integrity.",
+    "tags": [
+      "C",
+      "Spring Boot",
+      "Java",
+      "Angular",
+      "PostgreSQL",
+      "Docker",
+      "P2P",
+      "Torrenting",
+      "MinIO",
+      "GPG"
+    ],
+    "images": [],
+    "github": "https://github.com/orgs/GitTor-ISU/repositories",
+    "liveDemo": "https://sdmay26-15.sd.ece.iastate.edu/",
+    "date": "08/2025 - 05/2026",
+    "featured": true,
+    "category": "Senior Design",
+    "features": [
+      "CLI tool for repository seeding and leeching via torrents",
+      "Full-stack web application for repository discovery",
+      "GPG signature verification for commit authorization",
+      "Decentralized repository hosting via P2P protocol",
+      "MinIO storage integration for .torrent files",
+      "PostgreSQL database for metadata management",
+      "Dockerized application stack for easy deployment"
+    ],
+    "challenges": [
+      "Integrating BitTorrent protocol with Git workflow",
+      "Implementing secure GPG signature verification",
+      "Coordinating development across CLI and web applications",
+      "Ensuring data integrity across distributed peers",
+      "Designing intuitive UX for complex P2P operations"
+    ],
+    "learnings": [
+      "Advanced C programming for CLI development",
+      "P2P protocol implementation and networking concepts",
+      "Full-stack development with Spring Boot and Angular",
+      "Quality assurance processes and testing frameworks",
+      "Team leadership and cross-component coordination",
+      "Security considerations with GPG cryptography",
+      "Agile development methodologies in practice"
+    ],
+    "futureImprovements": [
+      "Add support for pull request workflow in P2P environment",
+      "Implement conflict resolution strategies for distributed commits",
+      "Develop mobile app for repository monitoring",
+      "Add analytics dashboard for repository health metrics",
+      "Implement automated peer discovery mechanisms"
+    ],
+    "metrics": [
+      "6-person team",
+      "Quality Assurance Lead role",
+      "Dual CLI/Web architecture"
+    ],
+    "supportingDocuments": [
+      {
+        "title": "Design Document",
+        "path": "https://sdmay26-15.sd.ece.iastate.edu/sample-doc.pdf",
+        "description": "Comprehensive design documentation including architecture, requirements, and implementation details"
+      },
+      {
+        "title": "Weekly Report 1",
+        "path": "https://sdmay26-15.sd.ece.iastate.edu/sdmay26-15-report01.pdf",
+        "description": "First weekly progress report detailing initial tasks and team contributions"
+      }
+    ]
+  },
   "ProjectHelper": {
     "name": "Project Helper AI Chatbot",
     "slug": "ProjectHelper",
@@ -57,82 +133,6 @@
       "Develop VS Code extension for in-editor access"
     ],
     "metrics": ["RAG system implementation", "Real-time GitHub synchronization"]
-  },
-  "GitTor": {
-    "name": "GitTor - Iowa State Senior Design",
-    "slug": "GitTor",
-    "description": "Senior Design capstone project developing a decentralized Git hosting platform using peer-to-peer torrenting protocol. Eliminates single points of failure by distributing repositories across users. Features CLI tool (C) and full-stack web application (Spring Boot, Angular, PostgreSQL) with GPG signature verification.",
-    "shortDescription": "Decentralized P2P Git hosting - Senior Design (491/492)",
-    "fullDescription": "GitTor is my senior design capstone project that reimagines how developers collaborate on code by eliminating centralized hosting platforms. Traditional platforms like GitHub and GitLab create single points of failure - if the platform goes down, collaboration halts. GitTor solves this by using a peer-to-peer torrenting protocol where every contributor hosts the repository, ensuring continuous availability. The system consists of two main components: a CLI tool written in C that handles repository seeding and leeching with torrent files, and a full-stack web application (Spring Boot backend, Angular frontend) that serves as a discovery platform for repositories. Security is ensured through GPG signature verification, preventing unauthorized commits. As Quality Assurance Lead for a 6-person team, I'm responsible for establishing testing frameworks, ensuring code quality, designing frontend pages, and maintaining comprehensive documentation.",
-    "problem": "Current Git hosting platforms create single points of failure. When GitHub or GitLab experience downtime, collaboration completely stops. Additionally, centralized platforms can modify repository contents, violate privacy policies, or arbitrarily block contributors.",
-    "solution": "Built a decentralized system where repositories are shared via P2P torrenting. Each contributor hosts the repository, eliminating downtime risk. GPG signatures ensure only authorized contributors can commit, and torrent file hashing guarantees data integrity.",
-    "tags": [
-      "C",
-      "Spring Boot",
-      "Java",
-      "Angular",
-      "PostgreSQL",
-      "Docker",
-      "P2P",
-      "Torrenting",
-      "MinIO",
-      "GPG"
-    ],
-    "images": [],
-    "github": "https://github.com/orgs/GitTor-ISU/repositories",
-    "liveDemo": null,
-    "date": "08/2025 - 05/2026",
-    "featured": true,
-    "category": "Senior Design",
-    "features": [
-      "CLI tool for repository seeding and leeching via torrents",
-      "Full-stack web application for repository discovery",
-      "GPG signature verification for commit authorization",
-      "Decentralized repository hosting via P2P protocol",
-      "MinIO storage integration for .torrent files",
-      "PostgreSQL database for metadata management",
-      "Dockerized application stack for easy deployment"
-    ],
-    "challenges": [
-      "Integrating BitTorrent protocol with Git workflow",
-      "Implementing secure GPG signature verification",
-      "Coordinating development across CLI and web applications",
-      "Ensuring data integrity across distributed peers",
-      "Designing intuitive UX for complex P2P operations"
-    ],
-    "learnings": [
-      "Advanced C programming for CLI development",
-      "P2P protocol implementation and networking concepts",
-      "Full-stack development with Spring Boot and Angular",
-      "Quality assurance processes and testing frameworks",
-      "Team leadership and cross-component coordination",
-      "Security considerations with GPG cryptography",
-      "Agile development methodologies in practice"
-    ],
-    "futureImprovements": [
-      "Add support for pull request workflow in P2P environment",
-      "Implement conflict resolution strategies for distributed commits",
-      "Develop mobile app for repository monitoring",
-      "Add analytics dashboard for repository health metrics",
-      "Implement automated peer discovery mechanisms"
-    ],
-    "metrics": [
-      "6-person team",
-      "Quality Assurance Lead role",
-      "Dual CLI/Web architecture"
-    ],
-    "supportingDocuments": [
-      {
-        "title": "Design Document",
-        "path": "https://sdmay26-15.sd.ece.iastate.edu/sample-doc.pdf",
-        "description": "Comprehensive design documentation including architecture, requirements, and implementation details"
-      },
-      {
-        "title": "Weekly Report 1",
-        "path": "https://sdmay26-15.sd.ece.iastate.edu/sdmay26-15-report01.pdf",
-        "description": "First weekly progress report detailing initial tasks and team contributions"
-      }
-    ]
   },
   "FinAntes": {
     "name": "FinAntes",
