@@ -50,11 +50,10 @@ export default function AboutPage() {
   return (
     <div className="container mt-5">
       <div className="row mb-5">
-        <div className="col-lg-8 mx-auto text-center">
-          <h1 className="display-4">About Me</h1>
-          <p className="lead text-muted">
-            Computer Engineer | Full-Stack Developer | Cloud Enthusiast
-          </p>
+        <div className="col-lg-8 mx-auto ">
+          <h2 className="border-bottom border-primary pb-2 d-inline-block">
+            About Me
+          </h2>
         </div>
       </div>
 
@@ -176,9 +175,7 @@ export default function AboutPage() {
                   <h6 className="text-primary mb-1">
                     AWS Certified Developer - Associate
                   </h6>
-                  <p className="text-muted small mb-0">
-                    Amazon Web Services | 2025
-                  </p>
+                  <p className="small mb-0">Amazon Web Services | 2025</p>
                 </div>
                 <Link
                   href="/certificates"
@@ -219,7 +216,7 @@ export default function AboutPage() {
         <div className="col-lg-10 mx-auto text-center">
           <div className="modern-card bg-dark text-white p-5">
             <h3 className="mb-4">Let&apos;s Connect</h3>
-            <p className="text-muted mb-4">
+            <p className="mb-4">
               I&apos;m always open to discussing new opportunities,
               collaborations, or just chatting about tech!
             </p>

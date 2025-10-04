@@ -46,7 +46,7 @@ export default function ABETPage() {
           <FaGraduationCap className="me-2" />
           ABET Requirements
         </h2>
-        <p className="text-muted mt-3">
+        <p className="mt-3">
           Academic reflections and ethics coursework as required by ABET
           accreditation standards.
         </p>
@@ -65,7 +65,7 @@ export default function ABETPage() {
                 </div>
 
                 <div className="mb-3">
-                  <small className="text-muted d-block mb-2">Key Topics:</small>
+                  <small className="d-block mb-2">Key Topics:</small>
                   <ul className="list-unstyled small">
                     {document.highlights.slice(0, 3).map((highlight, index) => (
                       <li key={index} className="mb-1">
