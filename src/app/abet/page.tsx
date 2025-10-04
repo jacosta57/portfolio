@@ -22,8 +22,8 @@ export default function ABETPage() {
     ...abetJSON[key as keyof typeof abetJSON],
   }));
 
-  const openModal = (document: ABETDocument) => {
-    setSelectedDocument(document);
+  const openModal = (abetDocument: ABETDocument) => {
+    setSelectedDocument(abetDocument);
     document.body.style.overflow = "hidden";
   };
 
@@ -65,7 +65,7 @@ export default function ABETPage() {
                 </div>
 
                 <div className="mb-3">
-                  <small className="d-block mb-2">Key Topics:</small>
+                  <small className="text-muted d-block mb-2">Key Topics:</small>
                   <ul className="list-unstyled small">
                     {document.highlights.slice(0, 3).map((highlight, index) => (
                       <li key={index} className="mb-1">
