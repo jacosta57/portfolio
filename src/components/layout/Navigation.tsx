@@ -47,6 +47,24 @@ export default function Navigation() {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item mx-2">
               <Link
+                className={`nav-link ${isActiveLink("/about") ? "active" : ""}`}
+                href="/about"
+                onClick={closeMenu}
+              >
+                About Me
+              </Link>
+            </li>
+            <li className="nav-item mx-2">
+              <Link
+                className={`nav-link ${isActiveLink("/experience") ? "active" : ""}`}
+                href="/experience"
+                onClick={closeMenu}
+              >
+                Experience
+              </Link>
+            </li>
+            <li className="nav-item mx-2">
+              <Link
                 className={`nav-link ${isActiveLink("/projects") ? "active" : ""}`}
                 href="/projects"
                 onClick={closeMenu}
@@ -70,6 +88,15 @@ export default function Navigation() {
                 onClick={closeMenu}
               >
                 Resume
+              </Link>
+            </li>
+            <li className="nav-item mx-2">
+              <Link
+                className={`nav-link ${isActiveLink("/abet") ? "active" : ""}`}
+                href="/abet"
+                onClick={closeMenu}
+              >
+                ABET
               </Link>
             </li>
             {/* <li className="nav-item mx-2">

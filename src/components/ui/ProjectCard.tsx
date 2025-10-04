@@ -31,7 +31,7 @@ function ProjectCard({ project, onTagClick }: ProjectCardProps) {
         <div className="card h-100 border-0 bg-dark text-white modern-card">
           <div className="position-relative">
             <ExportedImage
-              src={project.images?.[0] || "https://picsum.photos/400/200"}
+              src={project.images?.[0] || "images/projects/placeholder.png"}
               className="card-img-top"
               alt={project.name}
               width={400}

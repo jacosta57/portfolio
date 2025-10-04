@@ -4,6 +4,9 @@ import {
   FaProjectDiagram,
   FaCertificate,
   FaFileAlt,
+  FaGraduationCap,
+  FaBriefcase,
+  FaUser,
   // FaClock,
   // FaBlog,
   // FaEnvelope,
@@ -16,6 +19,18 @@ export default function NotFound() {
       href: "/",
       icon: FaHome,
       description: "Return to the main page",
+    },
+    {
+      name: "About Me",
+      href: "/about",
+      icon: FaUser,
+      description: "Learn about me",
+    },
+    {
+      name: "Experience",
+      href: "/experience",
+      icon: FaBriefcase,
+      description: "View my professional experience",
     },
     {
       name: "Projects",
@@ -34,6 +49,12 @@ export default function NotFound() {
       href: "/resume",
       icon: FaFileAlt,
       description: "Download my resume",
+    },
+    {
+      name: "ABET",
+      href: "/abet",
+      icon: FaGraduationCap,
+      description: "View my reflections from Iowa State University",
     },
     // {
     //   name: "Timeline",
@@ -68,13 +89,12 @@ export default function NotFound() {
               The page you&apos;re looking for doesn&apos;t exist or has been
               moved.
             </p>
-            <p className="text-muted">
+            <p>
               Don&apos;t worry! You can navigate to any section of my portfolio
               using the links below.
             </p>
           </div>
 
-          {/* Navigation Options */}
           <div className="mb-4">
             <h3 className="border-bottom border-primary pb-2 d-inline-block mb-4">
               Where would you like to go?
@@ -90,9 +110,7 @@ export default function NotFound() {
                     <div className="modern-card bg-dark text-white h-100 p-4 text-center">
                       <IconComponent className="text-primary mb-3" size={32} />
                       <h5 className="card-title mb-2">{option.name}</h5>
-                      <p className="card-text text-muted small">
-                        {option.description}
-                      </p>
+                      <p className="card-text small">{option.description}</p>
                       <div className="mt-auto">
                         <span className="btn btn-outline-light btn-sm">
                           Visit {option.name}

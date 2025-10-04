@@ -1,0 +1,38 @@
+{
+  "general-education": {
+    "title": "General Education Reflection",
+    "description": "Reflection on the role of general education courses in my engineering education and how they've contributed to my development as a well-rounded engineer.",
+    "fileName": "general-education-reflection.pdf",
+    "category": "Reflection",
+    "highlights": [
+      "Impact of humanities and social sciences",
+      "Communication skills development",
+      "Ethical reasoning and critical thinking",
+      "Cultural awareness and diversity"
+    ]
+  },
+  "cumulative-reflection": {
+    "title": "Cumulative Reflection",
+    "description": "Comprehensive reflection on my entire educational journey at Iowa State University, covering technical growth, personal development, and lessons learned throughout my computer engineering program.",
+    "fileName": "cumulative-reflection.pdf",
+    "category": "Reflection",
+    "highlights": [
+      "Technical skill progression",
+      "Team collaboration experiences",
+      "Challenges overcome and lessons learned",
+      "Career preparation and future goals"
+    ]
+  },
+  "ethics-paper": {
+    "title": "Ethics Paper",
+    "description": "Ethics paper from CPRE/EE 394 exploring ethical considerations in computer engineering and software development.",
+    "fileName": "ethics-essay.pdf",
+    "category": "Ethics",
+    "highlights": [
+      "Professional responsibility",
+      "Ethical decision-making frameworks",
+      "Real-world case studies",
+      "Impact of technology on society"
+    ]
+  }
+}

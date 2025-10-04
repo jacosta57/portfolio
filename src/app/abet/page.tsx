@@ -1,39 +1,40 @@
 "use client";
-
 import { useState } from "react";
-import { FaDownload, FaEye } from "react-icons/fa";
-import resumesJSON from "@/data/resumes.json";
+import { FaDownload, FaEye, FaGraduationCap } from "react-icons/fa";
+import abetJSON from "@/data/abet.json";
 
-interface Resume {
+interface ABETDocument {
   id: string;
   title: string;
   description: string;
   fileName: string;
-  technologies: string[];
+  category: string;
   highlights: string[];
 }
 
-export default function ResumePage() {
-  const [selectedResume, setSelectedResume] = useState<Resume | null>(null);
+export default function ABETPage() {
+  const [selectedDocument, setSelectedDocument] = useState<ABETDocument | null>(
+    null,
+  );
 
-  const resumes = Object.keys(resumesJSON).map((key) => ({
+  const documents = Object.keys(abetJSON).map((key) => ({
     id: key,
-    ...resumesJSON[key as keyof typeof resumesJSON],
+    ...abetJSON[key as keyof typeof abetJSON],
   }));
 
-  const openModal = (resume: Resume) => {
-    setSelectedResume(resume);
-    document.body.style.overflow = "hidden"; // Prevent background scroll
+  const openModal = (abetDocument: ABETDocument) => {
+    setSelectedDocument(abetDocument);
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
-    setSelectedResume(null);
+    setSelectedDocument(null);
     document.body.style.overflow = "unset";
   };
 
-  const downloadResume = (fileName: string) => {
+  const downloadDocument = (fileName: string) => {
     const link = document.createElement("a");
-    link.href = `/resumes/${fileName}`;
+    link.href = `/abet/${fileName}`;
     link.download = fileName;
     link.click();
   };
@@ -42,38 +43,31 @@ export default function ResumePage() {
     <div className="container mt-5">
       <div className="mb-4">
         <h2 className="border-bottom border-primary pb-2 d-inline-block">
-          Résumés - Tailored for Different Roles
+          <FaGraduationCap className="me-2" />
+          ABET Requirements
         </h2>
+        <p className="mt-3">
+          Academic reflections and ethics coursework as required by ABET
+          accreditation standards.
+        </p>
       </div>
 
       <div className="row g-4">
-        {resumes.map((resume) => (
-          <div className="col-md-6 col-lg-6 mb-4" key={resume.id}>
+        {documents.map((document) => (
+          <div className="col-md-6 col-lg-4 mb-4" key={document.id}>
             <div className="card h-100 border-0 bg-dark text-white modern-card">
               <div className="card-body">
-                <h5 className="card-title text-primary">{resume.title}</h5>
-                <p className="card-text">{resume.description}</p>
+                <h5 className="card-title text-primary">{document.title}</h5>
+                <p className="card-text">{document.description}</p>
 
                 <div className="mb-3">
-                  {resume.technologies.slice(0, 4).map((tech, index) => (
-                    <span
-                      className="me-2 mb-2 px-3 py-1 d-inline-flex align-items-center modern-chip"
-                      key={index}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {resume.technologies.length > 4 && (
-                    <span className="me-2 mb-2 px-3 py-1 d-inline-flex align-items-center modern-chip">
-                      +{resume.technologies.length - 4}
-                    </span>
-                  )}
+                  <span className="modern-chip">{document.category}</span>
                 </div>
 
                 <div className="mb-3">
-                  <small className="d-block mb-2">Key Highlights:</small>
+                  <small className="d-block mb-2">Key Topics:</small>
                   <ul className="list-unstyled small">
-                    {resume.highlights.slice(0, 3).map((highlight, index) => (
+                    {document.highlights.slice(0, 3).map((highlight, index) => (
                       <li key={index} className="mb-1">
                         <span className="text-primary me-2">•</span>
                         {highlight}
@@ -85,14 +79,14 @@ export default function ResumePage() {
                 <div className="d-flex justify-content-between align-items-center mt-auto">
                   <button
                     className="btn btn-outline-light"
-                    onClick={() => openModal(resume)}
+                    onClick={() => openModal(document)}
                   >
                     <FaEye className="me-2" />
                     Preview
                   </button>
                   <button
                     className="btn btn-primary"
-                    onClick={() => downloadResume(resume.fileName)}
+                    onClick={() => downloadDocument(document.fileName)}
                   >
                     <FaDownload className="me-2" />
                     Download
@@ -104,7 +98,7 @@ export default function ResumePage() {
         ))}
       </div>
 
-      {selectedResume && (
+      {selectedDocument && (
         <div
           className="modal show d-block"
           tabIndex={-1}
@@ -117,11 +111,11 @@ export default function ResumePage() {
           >
             <div className="modal-content bg-dark text-white">
               <div className="modal-header border-secondary d-flex justify-content-between">
-                <h5 className="modal-title">{selectedResume.title}</h5>
+                <h5 className="modal-title">{selectedDocument.title}</h5>
                 <div className="d-flex align-items-center">
                   <button
                     className="btn btn-primary me-2"
-                    onClick={() => downloadResume(selectedResume.fileName)}
+                    onClick={() => downloadDocument(selectedDocument.fileName)}
                   >
                     <FaDownload className="me-2" />
                     Download PDF
@@ -137,11 +131,11 @@ export default function ResumePage() {
 
               <div className="modal-body p-0">
                 <iframe
-                  src={`/resumes/${selectedResume.fileName}`}
+                  src={`/abet/${selectedDocument.fileName}`}
                   width="100%"
                   height="600px"
                   style={{ border: "none" }}
-                  title={`${selectedResume.title} Resume`}
+                  title={`${selectedDocument.title}`}
                 />
               </div>
             </div>
