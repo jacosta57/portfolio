@@ -65,12 +65,12 @@
     "supportingDocuments": [
       {
         "title": "Design Document",
-        "path": "https://sdmay26-15.sd.ece.iastate.edu/sample-doc.pdf",
+        "path": "https://sdmay26-15.sd.ece.iastate.edu/docs/GitTorDesignDocument.pdf",
         "description": "Comprehensive design documentation including architecture, requirements, and implementation details"
       },
       {
         "title": "Weekly Report 1",
-        "path": "https://sdmay26-15.sd.ece.iastate.edu/sdmay26-15-report01.pdf",
+        "path": "https://sdmay26-15.sd.ece.iastate.edu/docs/sdmay26-15-report01.pdf",
         "description": "First weekly progress report detailing initial tasks and team contributions"
       }
     ]
