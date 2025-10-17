@@ -19,7 +19,11 @@
       "MinIO",
       "GPG"
     ],
-    "images": [],
+    "images": [
+      "/images/projects/GitTor/dashboard.png",
+      "/images/projects/GitTor/repositories.png",
+      "/images/projects/GitTor/profile.png"
+    ],
     "github": "https://github.com/orgs/GitTor-ISU/repositories",
     "liveDemo": "https://sdmay26-15.sd.ece.iastate.edu/",
     "date": "08/2025 - 05/2026",
@@ -93,8 +97,12 @@
       "GitHub API",
       "AI/ML"
     ],
-    "images": [],
-    "github": "https://github.com/JaysonAcosta5704/project-helper",
+    "images": [
+      "/images/projects/ProjectHelper/home.png",
+      "/images/projects/ProjectHelper/repositories.png",
+      "/images/projects/ProjectHelper/chat.png"
+    ],
+    "github": "https://github.com/jacosta57/project-helper",
     "liveDemo": null,
     "date": "01/2025 - Present",
     "featured": true,
@@ -193,7 +201,7 @@
     "solution": "By implementing efficient API calls, optimizing the rendering process, and creating a clean architecture, we were able to deliver a high-performance application that exceeded the original requirements.",
     "tags": ["Java", "XML", "Android SDK", "RESTful APIs"],
     "images": [],
-    "github": "https://github.com/JaysonAcosta5704/konnect",
+    "github": "https://github.com/jacosta57/konnect",
     "liveDemo": null,
     "date": "08/2023 - 05/2024",
     "featured": false,
@@ -242,7 +250,7 @@
       "/images/projects/CoveyBot/voting.png",
       "/images/projects/CoveyBot/video.png"
     ],
-    "github": "https://github.com/JaysonAcosta5704/Discord-Bot",
+    "github": "https://github.com/jacosta57/Discord-Bot",
     "liveDemo": null,
     "date": "03/2020 - 01/2023",
     "featured": false,
@@ -283,7 +291,7 @@
     "solution": "TimePlanX combines traditional calendar functionality with modern planning techniques like time-blocking and integrated notes, enhanced by AI-generated suggestions.",
     "tags": ["Java", "XML", "Android SDK", "APIs"],
     "images": [],
-    "github": "https://github.com/JaysonAcosta5704/TimeplanX",
+    "github": "https://github.com/jacosta57/TimeplanX",
     "liveDemo": null,
     "date": "01/2023 - 06/2023",
     "featured": false,
@@ -319,8 +327,12 @@
     "problem": "Users who work with multiple AI tools face friction switching between different platforms and services, often requiring multiple clicks or browser tabs.",
     "solution": "This extension centralizes access to popular AI tools in a single, accessible interface, reducing the cognitive load and time spent navigating between services.",
     "tags": ["JavaScript", "HTML5", "CSS3"],
-    "images": [],
-    "github": "https://github.com/JaysonAcosta5704/AI-Browser",
+    "images": [
+      "/images/projects/AIBrowser/dashboard.png",
+      "/images/projects/AIBrowser/home.png",
+      "/images/projects/AIBrowser/top.png"
+    ],
+    "github": "https://github.com/jacosta57/AI-Browser",
     "liveDemo": null,
     "date": "11/2023 - 02/2024",
     "featured": false,
@@ -350,9 +362,9 @@
     "description": "Personal portfolio website showcasing projects and skills. Built with React and modern web technologies to create a responsive and interactive user experience.",
     "shortDescription": "Personal showcase website built with React",
     "fullDescription": "This portfolio website serves as a professional showcase of my skills, projects, and experience. Built using React, the site features responsive design principles that ensure optimal viewing across various devices and screen sizes. The project demonstrates proficiency in modern frontend development techniques, including component-based architecture, state management, and CSS styling with Bootstrap. The portfolio includes interactive elements to engage visitors and present information in a clear, visually appealing manner.",
-    "tags": ["React", "CSS3"],
-    "images": [],
-    "github": "https://github.com/JaysonAcosta5704/portfolio",
+    "tags": ["NextJS", "TypeScript"],
+    "images": ["/images/projects/portfolio/home.png"],
+    "github": "https://github.com/jacosta57/portfolio",
     "liveDemo": null,
     "date": "03/2024 - Present",
     "featured": false,
