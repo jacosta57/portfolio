@@ -19,7 +19,7 @@
     "bootstrap": "^5.3.7",
     "husky": "^9.1.7",
     "jest": "^30.0.5",
-    "next": "15.5.2",
+    "next": "15.5.7",
     "next-image-export-optimizer": "^1.19.0",
     "playwright": "^1.54.2",
     "prettier": "^3.6.2",
