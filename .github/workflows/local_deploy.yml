@@ -1,0 +1,26 @@
+name: Deploy (Local / NAS)
+on:
+  workflow_call: {}
+
+jobs:
+  deploy:
+    name: Deploy to Home Server
+    runs-on: [self-hosted]
+    steps:
+      - name: Download website artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: website-build
+          path: out
+
+      - name: Sync build to web root
+        env:
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+        run: |
+          set -euo pipefail
+          if [ -z "${DEPLOY_PATH:-}" ]; then
+            echo "::error::DEPLOY_PATH repo variable is not set. Refusing to rsync --delete into an empty path." >&2
+            exit 1
+          fi
+          rsync -a --delete out/ "${DEPLOY_PATH%/}/"
+          echo "Deployed $(find out -type f | wc -l) files to ${DEPLOY_PATH%/}/"
